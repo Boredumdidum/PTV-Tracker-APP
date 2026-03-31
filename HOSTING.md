@@ -1,201 +1,282 @@
-# Hosting Guide - PTV-Tracker-APP
+# Hosting Guide - PTV-Tracker-APP (Telegram Bot Only)
 
-This guide covers setting up Cloudflare Tunnel for secure hosting without port forwarding.
+This guide covers hosting the Telegram bot on your Raspberry Pi using **polling mode** (no web server, no domain, no Cloudflare required).
 
-## Why Cloudflare Tunnel?
+## Why Polling Mode?
 
-- **No port forwarding** - Keeps your home network secure
-- **Automatic HTTPS** - SSL certificate handled automatically
-- **DDoS protection** - Cloudflare's network protection
-- **Static URL** - No dynamic DNS needed
-- **Free** - Zero cost for personal use
+- **No domain needed** - Bot checks Telegram servers for messages
+- **No port forwarding** - Outbound connections only (more secure)
+- **No HTTPS/TLS setup** - No certificates needed
+- **Works behind any router** - No network configuration
+- **Simpler deployment** - Just run the Python script
 
 ---
 
 ## Prerequisites
 
 - Raspberry Pi (3B+ or 4 recommended) with Raspberry Pi OS
-- Domain name (or use Cloudflare's free subdomains)
-- Cloudflare account (free tier works fine)
+- Python 3.7+
+- Telegram Bot Token (from @BotFather)
+- PTV API credentials (DevID + API Key)
+- Stable internet connection
 
 ---
 
-## Step 1: Install cloudflared
+## Architecture
 
-On your Raspberry Pi:
+```
+Raspberry Pi (Your Home)
+    ↓
+[Bot Script Running 24/7]
+    ↓ (outbound HTTPS request every few seconds)
+Telegram API (api.telegram.org)
+    ↑
+[Users send messages]
+Telegram App
+```
+
+The bot asks Telegram "any new messages?" every few seconds instead of Telegram pushing messages to you.
+
+---
+
+## Step 0: Create Your User Account (Recommended)
+
+Instead of using the default `pi` user, create your own username for better security.
+
+### Create a New User
+```bash
+# Create new user (replace 'yourname' with your desired username)
+sudo adduser yourname
+
+# You'll be prompted to:
+# - Set a password
+# - Enter full name (optional)
+# - Enter room number, work phone, home phone, other (all optional)
+# - Confirm information
+```
+
+### Add User to Sudo Group
+```bash
+# Grant sudo privileges
+sudo usermod -aG sudo yourname
+```
+
+### Switch to New User
+```bash
+# Switch to your new account
+su - yourname
+
+# Verify sudo works
+sudo whoami
+# Should output: root
+```
+
+### Optional: Disable Default 'pi' User (Security)
+```bash
+# After confirming your new user works with sudo, disable pi user:
+sudo passwd -l pi
+
+# Or delete entirely (only if your new user works properly):
+sudo deluser pi
+```
+
+### Update the Service File (Important!)
+
+When you create your own user, update the systemd service file in Step 6:
+- Change `User=pi` to `User=yourname`
+- Change all `/home/pi/` paths to `/home/yourname/`
+
+---
+
+## Step 1: Prepare Your Pi
 
 ```bash
-# Download and install cloudflared
-curl -L --output cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm64.deb
+# Update system
+sudo apt update && sudo apt upgrade -y
 
-# For Pi 3 or earlier (32-bit), use:
-# curl -L --output cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm.deb
+# Install Python and pip
+sudo apt install python3 python3-pip python3-venv -y
 
-sudo dpkg -i cloudflared.deb
+# Create project directory
+mkdir -p ~/ptv-bot
+cd ~/ptv-bot
+
+# Create virtual environment
+python3 -m venv venv
+source venv/bin/activate
 ```
 
 ---
 
-## Step 2: Authenticate with Cloudflare
+## Step 2: Install Dependencies
 
 ```bash
-cloudflared tunnel login
-```
-
-This will:
-1. Print a URL to visit in your browser
-2. Open the Cloudflare dashboard
-3. Select which domain to use
-4. Download a certificate to your Pi (`~/.cloudflared/cert.pem`)
-
----
-
-## Step 3: Create Your Tunnel
-
-```bash
-# Create the tunnel (name it anything)
-cloudflared tunnel create ptv-tracker
-
-# Note the Tunnel ID output - you'll need it
-# Example: 12345abc-6789-0def-ghij-klmnopqrstuv
+pip install python-telegram-bot requests
 ```
 
 ---
 
-## Step 4: Configure the Tunnel
+## Step 3: Get the Bot Code
 
-Create config file:
+Download `bot.py` from this repository to your Pi:
 
 ```bash
-sudo mkdir -p /etc/cloudflared
-sudo nano /etc/cloudflared/config.yml
+# If using git (recommended)
+git clone https://github.com/YOUR_USERNAME/PTV-Tracker-APP.git
+cd PTV-Tracker-APP
+
+# Copy bot.py to your bot directory
+cp bot.py ~/ptv-bot/
+cd ~/ptv-bot
 ```
 
-Add this content (replace `YOUR_TUNNEL_ID` and `your-domain.com`):
+Or manually copy `bot.py` content to a file:
 
-```yaml
-tunnel: YOUR_TUNNEL_ID
-credentials-file: /home/pi/.cloudflared/YOUR_TUNNEL_ID.json
-
-ingress:
-  # Telegram bot webhook endpoint
-  - hostname: bot.your-domain.com
-    service: http://localhost:5000
-  
-  # PTV API proxy endpoint
-  - hostname: api.your-domain.com
-    service: http://localhost:5000
-  
-  # Default/fallback
-  - service: http_status:404
+```bash
+nano bot.py
+# Paste the contents of bot.py from the repository
+# Save: Ctrl+O, Enter, Ctrl+X
 ```
 
 ---
 
-## Step 5: Set Up DNS Records
+## Step 4: Environment Setup
+
+Create `.env` file:
 
 ```bash
-# Route traffic to your tunnel
-cloudflared tunnel route dns ptv-tracker bot.your-domain.com
-cloudflared tunnel route dns ptv-tracker api.your-domain.com
+cat > ~/ptv-bot/.env << 'EOF'
+TELEGRAM_BOT_TOKEN=your_bot_token_here
+PTV_DEV_ID=your_ptv_dev_id
+PTV_API_KEY=your_ptv_api_key
+EOF
 ```
 
-Or manually in Cloudflare dashboard:
-1. Go to DNS settings
-2. Add CNAME record: `bot` → `YOUR_TUNNEL_ID.cfargotunnel.com`
-3. Add CNAME record: `api` → `YOUR_TUNNEL_ID.cfargotunnel.com`
+**Never commit this file to git!**
+
+Add to `.gitignore`:
+```bash
+echo ".env" >> .gitignore
+echo "venv/" >> .gitignore
+```
 
 ---
 
-## Step 6: Run as a Service
+## Step 5: Test the Bot
 
 ```bash
-# Install as system service
-sudo cloudflared service install
+# Load environment and run
+export $(cat .env | xargs)
+python3 bot.py
+```
+
+You should see:
+```
+2026-03-31 10:00:00 - telegram.ext.Application - INFO - Application started
+2026-03-31 10:00:00 - __main__ - INFO - Starting bot in polling mode...
+```
+
+In Telegram, message your bot `/start` - it should respond!
+
+**Stop with Ctrl+C when done testing.**
+
+---
+
+## Step 6: Run as a Service (Auto-start)
+
+Create a systemd service to run the bot 24/7:
+
+```bash
+sudo nano /etc/systemd/system/ptv-bot.service
+```
+
+Add:
+
+```ini
+[Unit]
+Description=PTV Tracker Telegram Bot
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/ptv-bot
+EnvironmentFile=/home/pi/ptv-bot/.env
+ExecStart=/home/pi/ptv-bot/venv/bin/python /home/pi/ptv-bot/bot.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Enable and start:
+
+```bash
+# Reload systemd
+sudo systemctl daemon-reload
+
+# Enable auto-start
+sudo systemctl enable ptv-bot
 
 # Start the service
-sudo systemctl start cloudflared
-
-# Enable auto-start on boot
-sudo systemctl enable cloudflared
+sudo systemctl start ptv-bot
 
 # Check status
-sudo systemctl status cloudflared
+sudo systemctl status ptv-bot
 ```
 
 ---
 
-## Step 7: Test Your Setup
+## Step 7: Monitoring & Logs
 
+### View Bot Logs
 ```bash
-# Check tunnel is running
-cloudflared tunnel info ptv-tracker
+# Real-time logs
+sudo journalctl -u ptv-bot -f
 
-# Test connectivity
-curl https://api.your-domain.com/health
+# Last 50 entries
+sudo journalctl -u ptv-bot -n 50
+
+# Since last boot
+sudo journalctl -u ptv-bot --since today
+```
+
+### Check if Running
+```bash
+sudo systemctl is-active ptv-bot
+```
+
+### Restart Bot
+```bash
+sudo systemctl restart ptv-bot
+```
+
+### Stop Bot
+```bash
+sudo systemctl stop ptv-bot
 ```
 
 ---
 
-## Backend Application Setup
+## Updating the Bot
 
-Your Flask/FastAPI app should listen on `localhost:5000`:
-
-```python
-# app.py - Minimal example
-from flask import Flask, jsonify
-import requests
-import hmac
-import hashlib
-import os
-
-app = Flask(__name__)
-
-PTV_DEV_ID = os.environ['PTV_DEV_ID']
-PTV_API_KEY = os.environ['PTV_API_KEY']
-
-def generate_signature(path):
-    import time
-    timestamp = str(int(time.time()))
-    raw = f'{path}?devid={PTV_DEV_ID}&timestamp={timestamp}'
-    signature = hmac.new(
-        PTV_API_KEY.encode(),
-        raw.encode(),
-        hashlib.sha1
-    ).hexdigest()
-    return f'https://timetableapi.ptv.vic.gov.au{raw}&signature={signature}'
-
-@app.route('/ptv/<path:endpoint>')
-def proxy_ptv(endpoint):
-    url = generate_signature(f'/{endpoint}')
-    response = requests.get(url, timeout=10)
-    return jsonify(response.json())
-
-@app.route('/health')
-def health():
-    return jsonify({'status': 'ok'})
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
-```
-
-Run with:
-```bash
-export PTV_DEV_ID=your_dev_id
-export PTV_API_KEY=your_api_key
-python3 app.py
-```
-
----
-
-## Telegram Bot Webhook Configuration
-
-Once tunnel is running, set your webhook:
+When you make changes to `bot.py`:
 
 ```bash
-curl -X POST "https://api.telegram.org/bot<YOUR_BOT_TOKEN>/setWebhook" \
-  -H "Content-Type: application/json" \
-  -d '{"url": "https://bot.your-domain.com/webhook"}'
+cd ~/ptv-bot
+
+# Pull updates (if using git)
+git pull
+
+# Or edit bot.py directly
+nano bot.py
+
+# Restart to apply changes
+sudo systemctl restart ptv-bot
+
+# Check for errors
+sudo journalctl -u ptv-bot -f
 ```
 
 ---
@@ -204,30 +285,27 @@ curl -X POST "https://api.telegram.org/bot<YOUR_BOT_TOKEN>/setWebhook" \
 
 | Issue | Solution |
 |-------|----------|
-| Tunnel won't start | Check `sudo systemctl status cloudflared` for errors |
-| DNS not resolving | Wait 5-10 minutes for propagation, check Cloudflare DNS tab |
-| 502 errors | Ensure backend app is running on localhost:5000 |
-| Certificate errors | Run `cloudflared tunnel login` again |
+| Bot not responding | Check `sudo journalctl -u ptv-bot -f` for errors |
+| "Unauthorized" error | Verify `TELEGRAM_BOT_TOKEN` is correct |
+| PTV API errors | Check DevID and API key; verify signature generation |
+| Service won't start | Check `.env` file exists and has correct permissions |
+| Bot stops randomly | Check `Restart=always` is set in service file |
 
 ---
 
 ## Security Notes
 
-- Keep `~/.cloudflared/*.json` files private (they contain tunnel credentials)
-- Never commit these files to git
-- Use environment variables for API keys
-- Consider adding firewall rules on Pi: `sudo ufw allow from 127.0.0.1 to any port 5000`
+- Keep `.env` file private (chmod 600)
+- Don't share your bot token
+- PTV API key stays on your Pi (never exposed)
+- Bot only makes outbound connections (no open ports)
 
 ---
 
-## Updating cloudflared
+## Power Considerations
 
-```bash
-# Check current version
-cloudflared --version
-
-# Update to latest
-curl -L --output cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm64.deb
-sudo dpkg -i cloudflared.deb
-sudo systemctl restart cloudflared
-```
+The Pi must stay powered and connected:
+- Use a reliable power supply (official Raspberry Pi PSU recommended)
+- Connect via Ethernet if possible (more stable than WiFi)
+- Consider a UPS for power outages
+- The bot will reconnect automatically after network interruptions

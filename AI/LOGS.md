@@ -12,3 +12,11 @@ Format: `[YYYY-MM-DD HH:MM] - Description of work done`
 - Added Logging Requirements section to AI/AI.md
 - Created AI/DEBUG.md with debugging steps for GitHub Pages, Telegram bot, PTV API, and frontend issues
 
+## 2026-03-31 09:33
+- **MAJOR ARCHITECTURE CHANGE**: Switched from "Web + Bot" to "Telegram Bot Only"
+- Updated HOSTING.md: Removed Cloudflare tunnel setup, replaced with Telegram bot polling mode guide
+- Updated AI/DOCS.md: Reflected bot-only architecture (removed website references)
+- Updated AI/README.md: Updated project context and constraints for bot-only setup
+- Simplified deployment: No domain, no Cloudflare, no port forwarding needed
+- Raspberry Pi hosting via polling mode (outbound HTTPS only)
+

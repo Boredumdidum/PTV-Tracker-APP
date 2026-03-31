@@ -4,137 +4,188 @@
 
 ### Functional Requirements
 
-#### FR1: Website Hosting
-- **FR1.1**: Application must be hosted on GitHub Pages
-- **FR1.2**: Website must be publicly accessible
-- **FR1.3**: Static site generation for optimal performance
-- **FR1.4**: Responsive design for mobile and desktop
+#### FR1: Telegram Bot Core
+- **FR1.1**: Bot runs on Raspberry Pi using polling mode (no webhook needed)
+- **FR1.2**: Bot responds to user commands within 2 seconds
+- **FR1.3**: Bot supports PTV tracking queries and commands
+- **FR1.4**: Real-time notification system for transport updates
 
-#### FR2: Telegram Bot Integration
-- **FR2.1**: Bot must respond to user commands
-- **FR2.2**: Support for tracking-related queries
-- **FR2.3**: Real-time notification system
-- **FR2.4**: User authentication and authorization
+#### FR2: Telegram Bot Commands
+- **FR2.1**: `/start` - Initialize bot and display welcome message
+- **FR2.2**: `/help` - Show available commands and usage
+- **FR2.3**: `/status <stop>` - Check departures for a specific stop
+- **FR2.4**: `/routes <type>` - List train/tram/bus routes
+- **FR2.5**: `/track <route>` - Add a route to track for alerts
+- **FR2.6**: `/list` - Show all tracked routes
 
-#### FR3: Tracking Functionality
-- **FR3.1**: Monitor specified targets or data points
-- **FR3.2**: Store tracking history
-- **FR3.3**: Generate tracking reports
-- **FR3.4**: Alert system for significant changes
+#### FR3: PTV API Integration
+- **FR3.1**: Fetch real-time departure data from PTV API
+- **FR3.2**: Generate HMAC-SHA1 signature for API authentication
+- **FR3.3**: Respect PTV API rate limits (max requests per minute)
+- **FR3.4**: Graceful error handling for API failures
+
+#### FR4: Data Management
+- **FR4.1**: Store user preferences (tracked routes, notification settings)
+- **FR4.2**: JSON file storage on Raspberry Pi (simple, no database needed)
+- **FR4.3**: Data retention policy (auto-delete old data)
+- **FR4.4**: User data export on request
 
 ### Non-Functional Requirements
 
 #### Performance
-- **NFR1**: Website load time < 3 seconds
-- **NFR2**: Bot response time < 2 seconds
-- **NFR3**: Support concurrent users (100+)
+- **NFR1**: Bot response time < 2 seconds for commands
+- **NFR2**: PTV API fetch < 5 seconds (including signature generation)
+- **NFR3**: Support 50+ concurrent users
+- **NFR4**: Polling interval: check Telegram every 1-2 seconds
 
 #### Security
-- **NFR4**: Secure API key management
-- **NFR5**: User data encryption
-- **NFR6**: Rate limiting for bot requests
+- **NFR5**: Bot token stored in environment variables only
+- **NFR6**: PTV API credentials never exposed in code or logs
+- **NFR7**: Rate limiting for bot commands (prevent spam)
+- **NFR8**: Input validation on all user commands
 *See [SECURITY.md](SECURITY.md) for detailed security specifications*
 
 #### Reliability
-- **NFR7**: 99.9% uptime for website
-- **NFR8**: Bot availability 24/7
-- **NFR9**: Automated error recovery
+- **NFR9**: Bot runs 24/7 via systemd service
+- **NFR10**: Auto-restart on crash (`Restart=always`)
+- **NFR11**: Reconnect automatically after network interruption
+- **NFR12**: Log all errors for debugging
 
 #### Compatibility
-- **NFR10**: Support modern web browsers
-- **NFR11**: Telegram API compatibility
-- **NFR12**: Mobile device support
+- **NFR13**: Telegram API v6.0+ compatibility
+- **NFR14**: Python 3.7+ support
+- **NFR15**: Raspberry Pi OS (Debian-based) compatibility
 
 ## Technical Specifications
-
-### Web Application Specifications
-
-#### Frontend Requirements
-- **Framework**: Modern JavaScript framework (React/Vue/Angular)
-- **Styling**: CSS framework (Tailwind/Bootstrap)
-- **Build System**: Static site generator compatible with GitHub Pages
-- **Bundle Size**: < 5MB initial load
-
-#### API Specifications
-- **REST API**: For web application data
-- **WebSocket**: Real-time updates (if needed)
-- **Rate Limits**: 100 requests/minute per user
-- **Authentication**: JWT or OAuth 2.0
-
-*See [WEBSITE.md](WEBSITE.md) for detailed website specifications*
 
 ### Telegram Bot Specifications
 
 #### Bot Commands
 ```
 /start - Initialize bot and show help
-/track - Add new tracking target
-/status - Check tracking status
-/stop - Stop tracking
-/help - Show available commands
+/help - Show available commands and usage
+/status <stop_id> - Check departures for a stop
+/routes <type> - List routes (train/tram/bus)
+/track <route_id> - Track a route for alerts
+/list - Show all tracked routes
+/stop <route_id> - Stop tracking a route
 ```
 
 #### Bot Features
-- **Natural Language Processing**: Basic intent recognition
-- **Inline Mode**: Quick access to tracking data
-- **Group Support**: Work in Telegram groups
-- **Custom Keyboards**: Interactive user interface
+- **Natural Language Processing**: Basic command parsing with optional arguments
+- **Inline Mode**: Not required (polling mode sufficient)
+- **Group Support**: Work in Telegram groups with @botname commands
+- **Custom Keyboards**: ReplyKeyboardMarkup for common actions
+- **Error Messages**: User-friendly error descriptions
 
 *See [TELEGRAM.md](TELEGRAM.md) for detailed telegram bot specifications*
+
+### PTV API Integration
+
+#### API Client Requirements
+- **Language**: Python with `requests` library
+- **Authentication**: HMAC-SHA1 signature with DevID + API Key
+- **Endpoint**: `https://timetableapi.ptv.vic.gov.au/v3/`
+- **Rate Limiting**: Implement client-side rate limiting
+
+#### Supported Endpoints
+- `GET /v3/route_types` - List transport modes
+- `GET /v3/routes` - List all routes
+- `GET /v3/departures/route_type/{route_type}/stop/{stop_id}` - Departures
+- `GET /v3/stops/route/{route_id}` - Stops on a route
+
+#### Caching Strategy
+- **Static Data**: Route list (cache 24 hours)
+- **Dynamic Data**: Departures (cache 1-2 minutes)
+- **No Cache**: Real-time tracking requests
 
 ### Data Management
 
 #### Data Storage
-- **Primary Database**: Cloud-based solution
-- **Cache Layer**: Redis or similar
-- **Backup Strategy**: Daily automated backups
-- **Data Retention**: Configurable retention periods
+- **Primary Storage**: JSON files on Raspberry Pi
+- **Location**: `~/ptv-bot/data/`
+- **User Data**: One file per Telegram user ID (`user_{id}.json`)
+- **Backup**: Optional rsync to external storage
 
 #### Data Models
 ```
-User: {id, telegram_id, preferences, created_at}
-Target: {id, user_id, name, parameters, active}
-TrackingRecord: {id, target_id, timestamp, data, status}
-Alert: {id, user_id, message, severity, created_at}
+UserData: {
+  telegram_id: int,
+  tracked_routes: [route_id],
+  preferred_stops: [stop_id],
+  notification_settings: {quiet_hours: bool},
+  created_at: timestamp
+}
+
+Route: {
+  id: int,
+  route_name: str,
+  route_type: int,  # 0=train, 1=tram, 2=bus
+  route_number: str
+}
+
+Departure: {
+  route_id: int,
+  stop_id: int,
+  direction: str,
+  scheduled: timestamp,
+  estimated: timestamp,
+  platform: str
+}
 ```
 
 ## Integration Requirements
 
 ### External Services
-- **GitHub API**: For repository management
-- **Telegram Bot API**: For bot functionality
-- **Monitoring Services**: Uptime and performance tracking
-- **Analytics**: User behavior and usage statistics
+- **Telegram Bot API**: For bot functionality (polling mode)
+- **PTV Timetable API**: For transport data
+- **GitHub**: Repository hosting only
 
 ### Third-Party Dependencies
 - **Version Control**: Git
-- **CI/CD**: GitHub Actions
-- **Package Manager**: npm/yarn
-- **Testing Framework**: Jest/Cypress
+- **Language**: Python 3.7+
+- **Package Manager**: pip
+- **Testing**: pytest
+- **Process Manager**: systemd
+
+## Deployment
+
+### Raspberry Pi Setup
+- **OS**: Raspberry Pi OS Lite (64-bit recommended)
+- **Python**: 3.7 or higher
+- **Network**: Ethernet preferred, WiFi acceptable
+- **Power**: Official Raspberry Pi PSU
+- **Storage**: 16GB+ microSD card
+
+### Service Configuration
+- **Service Name**: `ptv-bot`
+- **User**: `pi`
+- **Auto-start**: Enabled
+- **Restart Policy**: `always` with 10-second delay
+- **Logging**: systemd journal
 
 ## Compliance and Legal
 
 ### Data Protection
-- **GDPR Compliance**: User data handling
-- **Privacy Policy**: Transparent data usage
-- **Terms of Service**: Clear user agreements
-- **Data Portability**: User data export capabilities
+- **GDPR Compliance**: Minimal data collection, user deletion on request
+- **Privacy Policy**: State what data is stored (Telegram ID, preferences only)
+- **Data Portability**: Export via `/export` command
 
 ### Licensing
-- **Open Source**: MIT or Apache 2.0 license
-- **Dependencies**: Compatible open source licenses
-- **Attribution**: Proper credit to third-party libraries
+- **Open Source**: MIT License recommended
+- **Dependencies**: python-telegram-bot (LGPL), requests (Apache 2.0)
+- **Attribution**: Credit to PTV for transport data
 
 ## Testing Requirements
 
 ### Test Coverage
-- **Unit Tests**: > 80% code coverage
-- **Integration Tests**: API and database interactions
-- **End-to-End Tests**: Critical user journeys
-- **Performance Tests**: Load and stress testing
+- **Unit Tests**: > 70% coverage for command handlers
+- **Integration Tests**: PTV API integration with mocked responses
+- **End-to-End Tests**: Telegram bot flow testing (manual)
+- **Performance Tests**: API response time monitoring
 
 ### Quality Assurance
-- **Code Review**: Mandatory peer reviews
-- **Automated Testing**: CI/CD pipeline integration
-- **Security Audits**: Regular vulnerability assessments
-- **User Acceptance Testing**: Beta testing program
+- **Code Review**: Peer review for all changes
+- **Pre-commit Hooks**: Prevent secret commits
+- **Security Checks**: `bandit` for Python security linting
+- **Manual Testing**: Test all commands before deployment

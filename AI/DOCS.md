@@ -1,75 +1,77 @@
 # PTV-Tracker-APP Documentation
 
 ## Overview
-PTV-Tracker-APP is a web application with Telegram bot integration for tracking purposes.
+PTV-Tracker-APP is a **Telegram bot only** application for tracking Victorian public transport (PTV) services. No website or web interface.
 
 ## Architecture
 
 ### Core Components
-- **Web Application**: Hosted on GitHub Pages
-- **Telegram Bot**: Provides bot interface for user interactions
-- **Tracking System**: Core functionality for monitoring and tracking
+- **Telegram Bot**: Python bot running on Raspberry Pi using polling mode
+- **PTV API Integration**: Fetches real-time transport data
+- **Tracking System**: Core functionality for monitoring departures and routes
 
 ### Technology Stack
-- **Frontend**: Web-based interface
-- **Backend**: GitHub hosting infrastructure
-- **Bot Integration**: Telegram Bot API
+- **Backend**: Python 3.7+ with python-telegram-bot library
+- **Hosting**: Raspberry Pi (home server) via polling mode
+- **APIs**: Telegram Bot API, PTV Timetable API
 - **Version Control**: Git/GitHub
 
 ## Features
 
-### 1. Website Hosted on GitHub
-- Static site hosting through GitHub Pages
-- Publicly accessible web interface
-- Version-controlled documentation and code
-
-### 2. Telegram Bot Support
-- Automated bot interactions
-- User command processing
-- Real-time notifications and updates
+### Telegram Bot Support
+- **Polling Mode**: Bot checks Telegram servers every few seconds (no webhook needed)
+- **Command Processing**: Handle /start, /status, /help, and custom commands
+- **PTV API Integration**: Real-time departures, routes, and service updates
+- **Secure**: API keys never leave the Raspberry Pi
 
 ## Development Guidelines
 
 ### Project Structure
 ```
 PTV-Tracker-APP/
-├── README.md          # Project overview
 ├── AI/                # AI-specific documentation
 │   ├── README.md      # AI instructions entry point
 │   ├── AI.md          # AI reading guidelines
-│   ├── DOCS.md        # Technical documentation
+│   ├── DOCS.md        # Technical documentation (this file)
 │   ├── SPECS.md       # Requirements and specifications
 │   ├── SECURITY.md    # Security specifications
 │   ├── TELEGRAM.md    # Bot specifications
-│   └── WEBSITE.md     # Web app specifications
-└── [additional project files]
+│   ├── DEBUG.md       # Debugging guide
+│   └── LOGS.md        # Activity logs
+├── HOSTING.md         # Raspberry Pi hosting guide
+├── bot.py             # Main bot script (create this)
+├── requirements.txt   # Python dependencies
+└── .env               # API keys (never commit)
 ```
 
 ### Code Organization
-- Follow GitHub Pages conventions for web content
-- Implement Telegram Bot API integration
-- Maintain separation between web and bot components
+- Bot code lives in `bot.py` (create this file)
+- Configuration via `.env` file (not in git)
+- Dependencies managed in `requirements.txt`
+- See `HOSTING.md` for Raspberry Pi setup instructions
 
 ## Deployment
 
-### GitHub Pages
-- Automatic deployment from main branch
-- Static site generation
-- Custom domain support (if applicable)
-
 ### Telegram Bot
-- Bot token management
-- Webhook configuration
-- Command handling implementation
+- Runs on Raspberry Pi at home
+- **Polling mode** - no domain, no webhook, no port forwarding needed
+- Auto-starts via systemd service
+- See `HOSTING.md` for complete setup instructions
+
+### GitHub Repository
+- Code storage and version control
+- Documentation (AI/ folder)
+- No website hosting (GitHub Pages not used)
 
 ## Maintenance
 
 ### Regular Updates
-- Keep dependencies current
-- Monitor Telegram API changes
+- Keep Python dependencies current: `pip install -r requirements.txt --upgrade`
+- Monitor Telegram API changes (python-telegram-bot updates)
 - Update documentation as features evolve
+- Review `HOSTS.md` for Pi maintenance tips
 
 ### Monitoring
-- Track bot performance
-- Monitor website availability
-- Log user interactions and errors
+- Track bot performance via `sudo journalctl -u ptv-bot -f`
+- Monitor PTV API availability
+- Log user interactions and errors (see DEBUG.md)
