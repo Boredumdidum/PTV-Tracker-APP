@@ -17,6 +17,8 @@ from telegram.ext import (
     Application, CommandHandler, ContextTypes, ConversationHandler,
     MessageHandler, filters
 )
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
 # Enable logging
 logging.basicConfig(
@@ -82,8 +84,8 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
         "Welcome to PTV Tracker!\n\n"
         "Commands:\n"
-        "/search <stop name> - Find a stop ID\n"
-        "/help - Show all commands"
+        "/search <stop name> - Find a stop\n"
+        "/cancel - Cancel current search"
     )
 
 async def search_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -175,8 +177,6 @@ async def handle_route_type(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 def format_stop_message(stop, index=None):
     """Format stop results showing route information"""
-    from datetime import datetime
-    
     stop_name = stop.get('stop_name') or 'N/A'
     stop_id = stop.get('stop_id') or 'N/A'
     stop_suburb = stop.get('stop_suburb') or 'N/A'
@@ -205,16 +205,17 @@ def format_stop_message(stop, index=None):
             status = status_info.get('description') or 'N/A'
             timestamp_str = status_info.get('timestamp') or ''
             
-            # Parse and format timestamp
+            # Parse and format timestamp with daylight savings (Melbourne time)
             formatted_time = 'N/A'
             if timestamp_str:
                 try:
-                    # Remove timezone info and parse
+                    # Parse ISO format with timezone
                     ts_clean = timestamp_str.replace('Z', '+00:00')
-                    if '+' in ts_clean:
-                        ts_clean = ts_clean[:ts_clean.rfind('+')]
-                    dt = datetime.fromisoformat(ts_clean.replace('T', ' '))
-                    formatted_time = dt.strftime("%H:%M:%S %d/%m/%Y")
+                    dt = datetime.fromisoformat(ts_clean)
+                    # Convert to Melbourne timezone (handles DST automatically)
+                    melbourne_tz = ZoneInfo('Australia/Melbourne')
+                    dt_local = dt.astimezone(melbourne_tz)
+                    formatted_time = dt_local.strftime("%H:%M:%S %d/%m/%Y")
                 except:
                     formatted_time = 'N/A'
             
@@ -241,15 +242,6 @@ async def cancel_search(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("❌ Search cancelled. Type /search to try again.")
     return ConversationHandler.END
 
-async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Show help"""
-    await update.message.reply_text(
-        "Available Commands:\n\n"
-        "/search <name> - Find stops (e.g., /search Flinders)\n"
-        "/start - Welcome message\n"
-        "/help - This message"
-    )
-
 async def error_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Log errors"""
     logger.error(f"Update {update} caused error {context.error}")
@@ -261,7 +253,6 @@ def main():
     
     # Add handlers
     application.add_handler(CommandHandler("start", start))
-    application.add_handler(CommandHandler("help", help_command))
     
     # Search conversation handler
     search_conv_handler = ConversationHandler(
