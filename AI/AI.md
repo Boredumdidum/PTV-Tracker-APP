@@ -30,3 +30,16 @@ After completing any programming task, AI must document work in `LOGS.md`:
 ## Debugging Guidelines
 
 For debugging steps and troubleshooting procedures, see `AI/DEBUG.md`.
+
+## PTV API Reference
+
+When implementing or modifying PTV API functionality, **always** read `AI/API_Documents.json` first. This file contains:
+
+- OpenAPI/Swagger specification for the PTV Timetable API
+- Available endpoints and their parameters
+- Request/response schemas
+- Authentication requirements
+
+**Location**: `AI/API_Documents.json`
+
+**When to read**: Before implementing any new PTV API features or modifying existing API calls.
