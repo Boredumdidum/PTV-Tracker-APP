@@ -44,17 +44,11 @@ ROUTE_TYPES = [
 
 def get_route_type_table():
     """Generate route type selection table"""
-    msg = "📋 *Select Route Type:*\n\n"
-    msg += "Please reply with the number (0-4) of your preferred transport mode:\n\n"
-    msg += "```\n"
-    msg += "┌─────┬─────────────┬────────┐\n"
-    msg += "│ Num │ Type        │ Emoji  │\n"
-    msg += "├─────┼─────────────┼────────┤\n"
+    msg = "📋 Select Route Type:\n\n"
+    msg += "Reply with a number (0-4) or type 'all':\n\n"
     for rt in ROUTE_TYPES:
-        msg += f"│  {rt['route_type']}  │ {rt['route_type_name']:<11} │ {rt['emoji']}   │\n"
-    msg += "└─────┴─────────────┴────────┘\n"
-    msg += "```\n\n"
-    msg += "Or type 'all' to see stops for all route types."
+        msg += f"{rt['route_type']} - {rt['emoji']} {rt['route_type_name']}\n"
+    msg += "all - Show all transport types\n"
     return msg
 
 # PTV API Helper
@@ -180,7 +174,9 @@ async def handle_route_type(update: Update, context: ContextTypes.DEFAULT_TYPE):
     return ConversationHandler.END
 
 def format_stop_message(stop, index=None):
-    """Format a single stop for display"""
+    """Format stop results showing route information"""
+    from datetime import datetime
+    
     stop_name = stop.get('stop_name', 'Unknown')
     stop_id = stop.get('stop_id', 'Unknown')
     stop_suburb = stop.get('stop_suburb', '')
@@ -190,38 +186,49 @@ def format_stop_message(stop, index=None):
     # Get emoji for route type
     rt_info = ROUTE_TYPES[route_type] if route_type < len(ROUTE_TYPES) else {"emoji": "❓", "route_type_name": "Unknown"}
     emoji = rt_info['emoji']
-    mode_name = rt_info['route_type_name']
     
     # Build message
     msg = ""
     if index:
-        msg += f"*{index}.* "
-    msg += f"{emoji} *{stop_name}*\n"
-    msg += f"📍 {stop_suburb} | Stop ID: `{stop_id}`\n"
-    msg += f"🚏 {mode_name} Stop\n"
+        msg += f"{index}. "
+    msg += f"{emoji} {stop_name}\n"
+    if stop_suburb:
+        msg += f"   Suburb: {stop_suburb}\n"
+    msg += f"   Stop ID: {stop_id}\n\n"
     
-    # Add routes information
+    # Add route information in requested format
     if routes:
-        msg += "\n🚌 *Routes:*\n"
         for route in routes[:3]:  # Limit to 3 routes per stop
-            route_num = route.get('route_number', '??')
             route_name = route.get('route_name', 'Unknown')
-            status = route.get('route_service_status', {}).get('description', 'Unknown')
+            route_number = route.get('route_number', '??')
+            route_id = route.get('route_id', 'Unknown')
+            status_info = route.get('route_service_status', {})
+            status = status_info.get('description', 'Unknown')
+            timestamp_str = status_info.get('timestamp', '')
             
-            # Status emoji
-            status_emoji = '✅' if 'Good' in status else '⚠️' if 'Suspended' not in status else '❌'
+            # Parse and format timestamp
+            formatted_time = "N/A"
+            if timestamp_str:
+                try:
+                    # Remove timezone info and parse
+                    ts_clean = timestamp_str.replace('Z', '+00:00')
+                    if '+' in ts_clean:
+                        ts_clean = ts_clean[:ts_clean.rfind('+')]
+                    dt = datetime.fromisoformat(ts_clean.replace('T', ' '))
+                    formatted_time = dt.strftime("%H:%M:%S %d/%m/%Y")
+                except:
+                    formatted_time = timestamp_str
             
-            # Shorten long route names
-            if len(route_name) > 40:
-                route_name = route_name[:37] + "..."
-            
-            msg += f"  • Route {route_num}: {route_name}\n"
-            msg += f"    {status_emoji} {status}\n"
+            msg += f"   Route Name: {route_name}\n"
+            msg += f"   Route Number: {route_number}\n"
+            msg += f"   Route ID: {route_id}\n"
+            msg += f"   Status: {status}\n"
+            msg += f"   Timestamp: {formatted_time}\n\n"
         
         if len(routes) > 3:
-            msg += f"  _...and {len(routes) - 3} more route(s)_\n"
+            msg += f"   ...and {len(routes) - 3} more route(s)\n\n"
     
-    msg += "\n`─────────────────────`"
+    msg += "---"
     return msg
 
 async def cancel_search(update: Update, context: ContextTypes.DEFAULT_TYPE):
