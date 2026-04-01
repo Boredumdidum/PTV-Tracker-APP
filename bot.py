@@ -164,12 +164,13 @@ async def handle_route_type(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
         return ConversationHandler.END
     
-    # Store stops in user data for selection
+    # Store stops in user data for selection and track shown count
     context.user_data['found_stops'] = stops
+    context.user_data['results_shown'] = 10
     
     # Display summary table
     msg = f"{header_msg}\n"
-    msg += "Enter one or more numbers to view details (e.g., '1' or '1,2,3'):\n\n"
+    msg += "Enter one or more numbers to view details (e.g., '1' or '1,2,3'), or type 'more' for more results:\n\n"
     
     for i, stop in enumerate(stops[:10], 1):
         stop_name = stop.get('stop_name', 'N/A')
@@ -179,8 +180,9 @@ async def handle_route_type(update: Update, context: ContextTypes.DEFAULT_TYPE):
         emoji = rt_info['emoji']
         msg += f"{i}. {emoji} {stop_name} ({stop_suburb})\n"
     
-    if len(stops) > 10:
-        msg += f"\n...and {len(stops) - 10} more stop(s)"
+    remaining = len(stops) - 10
+    if remaining > 0:
+        msg += f"\n...and {remaining} more stop(s). Type 'more' to see them."
     
     await update.message.reply_text(msg, parse_mode='Markdown')
     
@@ -256,13 +258,46 @@ def format_stop_message(stop, index=None):
     return msg
 
 async def handle_stop_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Handle user's stop selection from the table"""
-    user_input = update.message.text.strip()
+    """Handle user's stop selection from the table or 'more' request"""
+    user_input = update.message.text.strip().lower()
     stops = context.user_data.get('found_stops', [])
+    results_shown = context.user_data.get('results_shown', 10)
     
     if not stops:
         await update.message.reply_text("❌ Session expired. Please start a new search with /search")
         return ConversationHandler.END
+    
+    # Handle 'more' request
+    if user_input == 'more':
+        remaining = len(stops) - results_shown
+        if remaining <= 0:
+            await update.message.reply_text("ℹ️ No more results available.")
+            return ASKING_STOP_SELECTION
+        
+        # Show next 10 results
+        start_idx = results_shown
+        end_idx = min(start_idx + 10, len(stops))
+        
+        msg = f"📋 More results ({start_idx + 1}-{end_idx} of {len(stops)}):\n\n"
+        for i, stop in enumerate(stops[start_idx:end_idx], start_idx + 1):
+            stop_name = stop.get('stop_name', 'N/A')
+            stop_suburb = stop.get('stop_suburb', 'N/A')
+            route_type = stop.get('route_type', 0)
+            rt_info = ROUTE_TYPES[route_type] if route_type < len(ROUTE_TYPES) else {"emoji": "❓"}
+            emoji = rt_info['emoji']
+            msg += f"{i}. {emoji} {stop_name} ({stop_suburb})\n"
+        
+        # Update shown count
+        context.user_data['results_shown'] = end_idx
+        
+        remaining_after = len(stops) - end_idx
+        if remaining_after > 0:
+            msg += f"\n...and {remaining_after} more stop(s). Type 'more' to continue."
+        else:
+            msg += "\n\nThat's all results! Enter numbers to view details."
+        
+        await update.message.reply_text(msg, parse_mode='Markdown')
+        return ASKING_STOP_SELECTION
     
     # Parse numbers from input (comma, space, or mixed separated)
     import re
@@ -270,8 +305,8 @@ async def handle_stop_selection(update: Update, context: ContextTypes.DEFAULT_TY
     
     if not numbers:
         await update.message.reply_text(
-            "❌ Invalid input. Please enter one or more numbers.\n"
-            "Examples: '1', '2,3', '1 3 5'"
+            "❌ Invalid input. Please enter one or more numbers, or type 'more'.\n"
+            "Examples: '1', '2,3', '1 3 5', or 'more'"
         )
         return ASKING_STOP_SELECTION
     
