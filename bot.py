@@ -94,7 +94,7 @@ async def error_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     logger.error(f"Update {update} caused error {context.error}")
 
 # Main function
-async def main():
+def main():
     # Build application
     application = Application.builder().token(TOKEN).build()
     
@@ -108,8 +108,7 @@ async def main():
     
     # Run the bot (polling mode - no webhook needed)
     logger.info("Starting bot in polling mode...")
-    await application.run_polling(allowed_updates=Update.ALL_TYPES)
+    application.run_polling(allowed_updates=Update.ALL_TYPES)
 
 if __name__ == '__main__':
-    import asyncio
-    asyncio.run(main())
+    main()
