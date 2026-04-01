@@ -177,14 +177,14 @@ def format_stop_message(stop, index=None):
     """Format stop results showing route information"""
     from datetime import datetime
     
-    stop_name = stop.get('stop_name', 'Unknown')
-    stop_id = stop.get('stop_id', 'Unknown')
-    stop_suburb = stop.get('stop_suburb', '')
+    stop_name = stop.get('stop_name') or 'N/A'
+    stop_id = stop.get('stop_id') or 'N/A'
+    stop_suburb = stop.get('stop_suburb') or 'N/A'
     route_type = stop.get('route_type', 0)
     routes = stop.get('routes', [])
     
     # Get emoji for route type
-    rt_info = ROUTE_TYPES[route_type] if route_type < len(ROUTE_TYPES) else {"emoji": "❓", "route_type_name": "Unknown"}
+    rt_info = ROUTE_TYPES[route_type] if route_type < len(ROUTE_TYPES) else {"emoji": "❓", "route_type_name": "N/A"}
     emoji = rt_info['emoji']
     
     # Build message
@@ -192,22 +192,21 @@ def format_stop_message(stop, index=None):
     if index:
         msg += f"{index}. "
     msg += f"{emoji} {stop_name}\n"
-    if stop_suburb:
-        msg += f"   Suburb: {stop_suburb}\n"
+    msg += f"   Suburb: {stop_suburb}\n"
     msg += f"   Stop ID: {stop_id}\n\n"
     
     # Add route information in requested format
     if routes:
         for route in routes[:3]:  # Limit to 3 routes per stop
-            route_name = route.get('route_name', 'Unknown')
-            route_number = route.get('route_number', '??')
-            route_id = route.get('route_id', 'Unknown')
-            status_info = route.get('route_service_status', {})
-            status = status_info.get('description', 'Unknown')
-            timestamp_str = status_info.get('timestamp', '')
+            route_name = route.get('route_name') or 'N/A'
+            route_number = route.get('route_number') or 'N/A'
+            route_id = route.get('route_id') or 'N/A'
+            status_info = route.get('route_service_status') or {}
+            status = status_info.get('description') or 'N/A'
+            timestamp_str = status_info.get('timestamp') or ''
             
             # Parse and format timestamp
-            formatted_time = "N/A"
+            formatted_time = 'N/A'
             if timestamp_str:
                 try:
                     # Remove timezone info and parse
@@ -217,7 +216,7 @@ def format_stop_message(stop, index=None):
                     dt = datetime.fromisoformat(ts_clean.replace('T', ' '))
                     formatted_time = dt.strftime("%H:%M:%S %d/%m/%Y")
                 except:
-                    formatted_time = timestamp_str
+                    formatted_time = 'N/A'
             
             msg += f"   Route Name: {route_name}\n"
             msg += f"   Route Number: {route_number}\n"
@@ -227,6 +226,12 @@ def format_stop_message(stop, index=None):
         
         if len(routes) > 3:
             msg += f"   ...and {len(routes) - 3} more route(s)\n\n"
+    else:
+        msg += "   Route Name: N/A\n"
+        msg += "   Route Number: N/A\n"
+        msg += "   Route ID: N/A\n"
+        msg += "   Status: N/A\n"
+        msg += "   Timestamp: N/A\n\n"
     
     msg += "---"
     return msg
