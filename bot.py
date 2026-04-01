@@ -55,37 +55,56 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
         "Welcome to PTV Tracker!\n\n"
         "Commands:\n"
-        "/status - Check next departures\n"
-        "/routes - List train/tram/bus routes\n"
+        "/search <stop name> - Find a stop ID\n"
         "/help - Show all commands"
     )
 
-async def status(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Get status for a stop"""
-    # Example: Get departures for Flinders Street Station (ID: 1071)
-    data = get_ptv_data('departures/route_type/0/stop/1071')
+async def search(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Search for stops by name"""
+    # Get search term from command arguments
+    if not context.args:
+        await update.message.reply_text(
+            "Usage: /search <stop name>\n"
+            "Example: /search Flinders Street\n"
+            "Example: /search South Yarra"
+        )
+        return
     
-    if data and 'departures' in data:
-        departures = data['departures'][:5]  # Top 5
-        msg = "🚂 Next departures from Flinders St:\n\n"
+    search_term = ' '.join(context.args)
+    logger.info(f"Searching for: {search_term}")
+    
+    # Call PTV search API
+    data = get_ptv_data(f'search/{search_term}')
+    
+    if data and 'stops' in data and data['stops']:
+        stops = data['stops'][:5]  # Limit to 5 results
+        msg = f"🔍 Search results for '{search_term}':\n\n"
         
-        for dep in departures:
-            route = dep.get('route_id', 'Unknown')
-            direction = dep.get('direction', 'Unknown')
-            est = dep.get('estimated_departure_utc', 'N/A')
-            msg += f"Route {route} → {direction}\n"
+        for stop in stops:
+            stop_name = stop.get('stop_name', 'Unknown')
+            stop_id = stop.get('stop_id', 'Unknown')
+            route_type = stop.get('route_type', 0)
+            route_type_name = {0: '🚂 Train', 1: '🚃 Tram', 2: '🚌 Bus', 3: '🚆 VLine', 4: '🌙 Night Bus'}.get(route_type, 'Unknown')
+            
+            msg += f"{route_type_name} Stop ID: `{stop_id}`\n"
+            msg += f"Name: {stop_name}\n\n"
         
-        await update.message.reply_text(msg)
+        await update.message.reply_text(msg, parse_mode='Markdown')
     else:
-        await update.message.reply_text("❌ Couldn't fetch data. Try again later.")
+        await update.message.reply_text(
+            f"❌ No stops found for '{search_term}'.\n"
+            "Try:\n"
+            "- Check spelling\n"
+            "- Use a simpler name (e.g., 'Flinders' instead of 'Flinders Street Railway Station')\n"
+            "- Try a nearby major station"
+        )
 
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Show help"""
     await update.message.reply_text(
         "Available Commands:\n\n"
+        "/search <name> - Find stops (e.g., /search Flinders)\n"
         "/start - Welcome message\n"
-        "/status - Check departures\n"
-        "/routes - List routes\n"
         "/help - This message"
     )
 
@@ -100,7 +119,7 @@ def main():
     
     # Add handlers
     application.add_handler(CommandHandler("start", start))
-    application.add_handler(CommandHandler("status", status))
+    application.add_handler(CommandHandler("search", search))
     application.add_handler(CommandHandler("help", help_command))
     
     # Error handler
