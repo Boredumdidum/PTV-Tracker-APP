@@ -1,0 +1,4421 @@
+{
+  "stops": [
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station - Ringwood via Park Orchards",
+          "route_number": "271",
+          "route_type": 2,
+          "route_id": 15806,
+          "route_gtfs_id": "4-271",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station - Doncaster SC via Middleborough Rd",
+          "route_number": "279",
+          "route_type": 2,
+          "route_id": 15808,
+          "route_gtfs_id": "4-279",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.81923,
+      "stop_longitude": 145.132828,
+      "stop_sequence": 0,
+      "stop_id": 22007,
+      "stop_name": "1100 Whitehorse Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Oakleigh - Box Hill via Clayton & Monash University & Mt Waverley",
+          "route_number": "733",
+          "route_type": 2,
+          "route_id": 13271,
+          "route_gtfs_id": "4-733",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.82265,
+      "stop_longitude": 145.131821,
+      "stop_sequence": 0,
+      "stop_id": 22560,
+      "stop_name": "32 Barcelona St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill North",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill - Mitcham via Blackburn North",
+          "route_number": "270",
+          "route_type": 2,
+          "route_id": 8128,
+          "route_gtfs_id": "4-270",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.81637,
+      "stop_longitude": 145.131165,
+      "stop_sequence": 0,
+      "stop_id": 11921,
+      "stop_name": "40 Dorking Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill - Mitcham via Blackburn North",
+          "route_number": "270",
+          "route_type": 2,
+          "route_id": 8128,
+          "route_gtfs_id": "4-270",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.815834,
+      "stop_longitude": 145.131165,
+      "stop_sequence": 0,
+      "stop_id": 19788,
+      "stop_name": "45 Dorking Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill North",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill - Mitcham via Blackburn North",
+          "route_number": "270",
+          "route_type": 2,
+          "route_id": 8128,
+          "route_gtfs_id": "4-270",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.80456,
+      "stop_longitude": 145.133423,
+      "stop_sequence": 0,
+      "stop_id": 13963,
+      "stop_name": "Alan St/Dorking Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill - Mitcham via Blackburn North",
+          "route_number": "270",
+          "route_type": 2,
+          "route_id": 8128,
+          "route_gtfs_id": "4-270",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8043137,
+      "stop_longitude": 145.133347,
+      "stop_sequence": 0,
+      "stop_id": 19793,
+      "stop_name": "Alan St/Dorking Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Mitcham - Box Hill via Brentford Square & Forest Hill & Blackburn",
+          "route_number": "765",
+          "route_type": 2,
+          "route_id": 964,
+          "route_gtfs_id": "4-765",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8245049,
+      "stop_longitude": 145.127319,
+      "stop_sequence": 0,
+      "stop_id": 12586,
+      "stop_name": "Albion Rd/William St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill North",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station - Doncaster SC via Middleborough Rd",
+          "route_number": "279",
+          "route_type": 2,
+          "route_id": 15808,
+          "route_gtfs_id": "4-279",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.81101,
+      "stop_longitude": 145.140091,
+      "stop_sequence": 0,
+      "stop_id": 21085,
+      "stop_name": "Ashley St/Middleborough Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill North",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station - Chadstone via Surrey Hills & Camberwell & Glen Iris",
+          "route_number": "612",
+          "route_type": 2,
+          "route_id": 13024,
+          "route_gtfs_id": "4-612",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8118973,
+      "stop_longitude": 145.118317,
+      "stop_sequence": 0,
+      "stop_id": 17877,
+      "stop_name": "Avon St/Severn St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill South",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Oakleigh - Box Hill via Clayton & Monash University & Mt Waverley",
+          "route_number": "733",
+          "route_type": 2,
+          "route_id": 13271,
+          "route_gtfs_id": "4-733",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8330956,
+      "stop_longitude": 145.135773,
+      "stop_sequence": 0,
+      "stop_id": 24553,
+      "stop_name": "Ayr St/Middleborough Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Oakleigh - Box Hill via Clayton & Monash University & Mt Waverley",
+          "route_number": "733",
+          "route_type": 2,
+          "route_id": 13271,
+          "route_gtfs_id": "4-733",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8252754,
+      "stop_longitude": 145.131989,
+      "stop_sequence": 0,
+      "stop_id": 25609,
+      "stop_name": "Barcelona St/Albion Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill North",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Altona - Mordialloc (SMARTBUS Service)",
+          "route_number": "903",
+          "route_type": 2,
+          "route_id": 15789,
+          "route_gtfs_id": "4-903",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8037376,
+      "stop_longitude": 145.126541,
+      "stop_sequence": 0,
+      "stop_id": 21530,
+      "stop_name": "Bell St/Station St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Southland - Box Hill Station via Chadstone & Jordanville & Deakin University",
+          "route_number": "767",
+          "route_type": 2,
+          "route_id": 15813,
+          "route_gtfs_id": "4-767",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8238373,
+      "stop_longitude": 145.11377,
+      "stop_sequence": 0,
+      "stop_id": 13745,
+      "stop_name": "Blenheim Ave/Elgar Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill South",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station to Nunawading",
+          "route_number": "735",
+          "route_type": 2,
+          "route_id": 15798,
+          "route_gtfs_id": "4-735",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station - Upper Ferntree Gully via Vermont South & Knox City & Mountain Gate",
+          "route_number": "732",
+          "route_type": 2,
+          "route_id": 15799,
+          "route_gtfs_id": "4-732",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.84167,
+      "stop_longitude": 145.121613,
+      "stop_sequence": 0,
+      "stop_id": 24388,
+      "stop_name": "Boardman Cl/Station St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Mitcham - Box Hill via Brentford Square & Forest Hill & Blackburn",
+          "route_number": "765",
+          "route_type": 2,
+          "route_id": 964,
+          "route_gtfs_id": "4-765",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill - Mitcham via Blackburn North",
+          "route_number": "270",
+          "route_type": 2,
+          "route_id": 8128,
+          "route_gtfs_id": "4-270",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station - Chadstone via Surrey Hills & Camberwell & Glen Iris",
+          "route_number": "612",
+          "route_type": 2,
+          "route_id": 13024,
+          "route_gtfs_id": "4-612",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Oakleigh - Box Hill via Clayton & Monash University & Mt Waverley",
+          "route_number": "733",
+          "route_type": 2,
+          "route_id": 13271,
+          "route_gtfs_id": "4-733",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Templestowe - Box Hill Bus Station",
+          "route_number": "281",
+          "route_type": 2,
+          "route_id": 15785,
+          "route_gtfs_id": "4-281",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Altona - Mordialloc (SMARTBUS Service)",
+          "route_number": "903",
+          "route_type": 2,
+          "route_id": 15789,
+          "route_gtfs_id": "4-903",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station to Nunawading",
+          "route_number": "735",
+          "route_type": 2,
+          "route_id": 15798,
+          "route_gtfs_id": "4-735",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station - Upper Ferntree Gully via Vermont South & Knox City & Mountain Gate",
+          "route_number": "732",
+          "route_type": 2,
+          "route_id": 15799,
+          "route_gtfs_id": "4-732",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station - Burwood via Surrey Hills",
+          "route_number": "766",
+          "route_type": 2,
+          "route_id": 15800,
+          "route_gtfs_id": "4-766",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station - Deakin University",
+          "route_number": "201",
+          "route_type": 2,
+          "route_id": 15802,
+          "route_gtfs_id": "4-201",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "City - Box Hill Station via Belmore Rd and Eastern Fwy",
+          "route_number": "302",
+          "route_type": 2,
+          "route_id": 15804,
+          "route_gtfs_id": "4-302",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station - Ringwood via Park Orchards",
+          "route_number": "271",
+          "route_type": 2,
+          "route_id": 15806,
+          "route_gtfs_id": "4-271",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station - Doncaster SC via Middleborough Rd",
+          "route_number": "279",
+          "route_type": 2,
+          "route_id": 15808,
+          "route_gtfs_id": "4-279",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Southland - Box Hill Station via Chadstone & Jordanville & Deakin University",
+          "route_number": "767",
+          "route_type": 2,
+          "route_id": 15813,
+          "route_gtfs_id": "4-767",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station - Greensborough Station via Doncaster SC",
+          "route_number": "293",
+          "route_type": 2,
+          "route_id": 16269,
+          "route_gtfs_id": "4-293",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Doncaster Park & Ride - Box Hill Station via Union Road",
+          "route_number": "284",
+          "route_type": 2,
+          "route_id": 16447,
+          "route_gtfs_id": "4-284",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "SkyBus Eastern Express",
+          "route_number": "",
+          "route_type": 2,
+          "route_id": 18925,
+          "route_gtfs_id": "11-box",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.81925,
+      "stop_longitude": 145.12233,
+      "stop_sequence": 0,
+      "stop_id": 14035,
+      "stop_name": "Box Hill Bus Station/Station St ",
+      "stop_landmark": "Box Hill Bus Station"
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 1,
+      "routes": [
+        {
+          "route_name": "Box Hill - Port Melbourne",
+          "route_number": "109",
+          "route_type": 1,
+          "route_id": 722,
+          "route_gtfs_id": "3-109",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.81783,
+      "stop_longitude": 145.122086,
+      "stop_sequence": 0,
+      "stop_id": 2409,
+      "stop_name": "Box Hill Central/Whitehorse Rd #58 ",
+      "stop_landmark": "Box Hill Central"
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station - Ringwood via Park Orchards",
+          "route_number": "271",
+          "route_type": 2,
+          "route_id": 15806,
+          "route_gtfs_id": "4-271",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station - Doncaster SC via Middleborough Rd",
+          "route_number": "279",
+          "route_type": 2,
+          "route_id": 15808,
+          "route_gtfs_id": "4-279",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8195953,
+      "stop_longitude": 145.13678,
+      "stop_sequence": 0,
+      "stop_id": 21345,
+      "stop_name": "Box Hill City Oval/Whitehorse Rd ",
+      "stop_landmark": "Box Hill City Oval"
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station - Chadstone via Surrey Hills & Camberwell & Glen Iris",
+          "route_number": "612",
+          "route_type": 2,
+          "route_id": 13024,
+          "route_gtfs_id": "4-612",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Altona - Mordialloc (SMARTBUS Service)",
+          "route_number": "903",
+          "route_type": 2,
+          "route_id": 15789,
+          "route_gtfs_id": "4-903",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8151436,
+      "stop_longitude": 145.124573,
+      "stop_sequence": 0,
+      "stop_id": 21537,
+      "stop_name": "Box Hill Gardens/Station St ",
+      "stop_landmark": "Box Hill Gardens"
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "City - Box Hill -Doncaster SC",
+          "route_number": "302-304 Combined",
+          "route_type": 2,
+          "route_id": 13796,
+          "route_gtfs_id": "4-C24",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Templestowe - Box Hill Bus Station",
+          "route_number": "281",
+          "route_type": 2,
+          "route_id": 15785,
+          "route_gtfs_id": "4-281",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "City - Box Hill Station via Belmore Rd and Eastern Fwy",
+          "route_number": "302",
+          "route_type": 2,
+          "route_id": 15804,
+          "route_gtfs_id": "4-302",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station - Greensborough Station via Doncaster SC",
+          "route_number": "293",
+          "route_type": 2,
+          "route_id": 16269,
+          "route_gtfs_id": "4-293",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8141136,
+      "stop_longitude": 145.117661,
+      "stop_sequence": 0,
+      "stop_id": 21545,
+      "stop_name": "Box Hill Hospital/Arnold St ",
+      "stop_landmark": "Box Hill Hospital"
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "City - Box Hill -Doncaster SC",
+          "route_number": "302-304 Combined",
+          "route_type": 2,
+          "route_id": 13796,
+          "route_gtfs_id": "4-C24",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Templestowe - Box Hill Bus Station",
+          "route_number": "281",
+          "route_type": 2,
+          "route_id": 15785,
+          "route_gtfs_id": "4-281",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "City - Box Hill Station via Belmore Rd and Eastern Fwy",
+          "route_number": "302",
+          "route_type": 2,
+          "route_id": 15804,
+          "route_gtfs_id": "4-302",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station - Greensborough Station via Doncaster SC",
+          "route_number": "293",
+          "route_type": 2,
+          "route_id": 16269,
+          "route_gtfs_id": "4-293",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8146,
+      "stop_longitude": 145.1198,
+      "stop_sequence": 0,
+      "stop_id": 21795,
+      "stop_name": "Box Hill Hospital/Nelson Rd ",
+      "stop_landmark": "Box Hill Hospital"
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station - Ringwood via Park Orchards",
+          "route_number": "271",
+          "route_type": 2,
+          "route_id": 15806,
+          "route_gtfs_id": "4-271",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station - Doncaster SC via Middleborough Rd",
+          "route_number": "279",
+          "route_type": 2,
+          "route_id": 15808,
+          "route_gtfs_id": "4-279",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.81969,
+      "stop_longitude": 145.136673,
+      "stop_sequence": 0,
+      "stop_id": 21906,
+      "stop_name": "Box Hill HS/Whitehorse Rd ",
+      "stop_landmark": "Box Hill HS"
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Lilydale",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Ringwood - Lilydale via Croydon & Chirnside Park",
+          "route_number": "670",
+          "route_type": 2,
+          "route_id": 16003,
+          "route_gtfs_id": "4-670",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.76558,
+      "stop_longitude": 145.346863,
+      "stop_sequence": 0,
+      "stop_id": 13900,
+      "stop_name": "Box Hill Institute/Jarlo Dr ",
+      "stop_landmark": "Box Hill Institute"
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Mont Albert North",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station - Chadstone via Surrey Hills & Camberwell & Glen Iris",
+          "route_number": "612",
+          "route_type": 2,
+          "route_id": 13024,
+          "route_gtfs_id": "4-612",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.81101,
+      "stop_longitude": 145.113678,
+      "stop_sequence": 0,
+      "stop_id": 17874,
+      "stop_name": "Box Hill Senior Sec Col/Melrose St ",
+      "stop_landmark": "Box Hill Senior Sec Col"
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 0,
+      "routes": [
+        {
+          "route_name": "Belgrave",
+          "route_number": "",
+          "route_type": 0,
+          "route_id": 2,
+          "route_gtfs_id": "2-BEG",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Lilydale",
+          "route_number": "",
+          "route_type": 0,
+          "route_id": 9,
+          "route_gtfs_id": "2-LIL",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8192177,
+      "stop_longitude": 145.121429,
+      "stop_sequence": 0,
+      "stop_id": 1026,
+      "stop_name": "Box Hill Station",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "City - Box Hill -Doncaster SC",
+          "route_number": "302-304 Combined",
+          "route_type": 2,
+          "route_id": 13796,
+          "route_gtfs_id": "4-C24",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Templestowe - Box Hill Bus Station",
+          "route_number": "281",
+          "route_type": 2,
+          "route_id": 15785,
+          "route_gtfs_id": "4-281",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "City - Box Hill Station via Belmore Rd and Eastern Fwy",
+          "route_number": "302",
+          "route_type": 2,
+          "route_id": 15804,
+          "route_gtfs_id": "4-302",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station - Greensborough Station via Doncaster SC",
+          "route_number": "293",
+          "route_type": 2,
+          "route_id": 16269,
+          "route_gtfs_id": "4-293",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8171463,
+      "stop_longitude": 145.119263,
+      "stop_sequence": 0,
+      "stop_id": 21546,
+      "stop_name": "Box Hill TAFE/Nelson Rd ",
+      "stop_landmark": "Box Hill TAFE"
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill North",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Altona - Mordialloc (SMARTBUS Service)",
+          "route_number": "903",
+          "route_type": 2,
+          "route_id": 15789,
+          "route_gtfs_id": "4-903",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.79878,
+      "stop_longitude": 145.127365,
+      "stop_sequence": 0,
+      "stop_id": 21527,
+      "stop_name": "Boxleigh Gr/Station St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill South",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station to Nunawading",
+          "route_number": "735",
+          "route_type": 2,
+          "route_id": 15798,
+          "route_gtfs_id": "4-735",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station - Upper Ferntree Gully via Vermont South & Knox City & Mountain Gate",
+          "route_number": "732",
+          "route_type": 2,
+          "route_id": 15799,
+          "route_gtfs_id": "4-732",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8434,
+      "stop_longitude": 145.121292,
+      "stop_sequence": 0,
+      "stop_id": 24389,
+      "stop_name": "Brook Cres/Station St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill South",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Southland - Box Hill Station via Chadstone & Jordanville & Deakin University",
+          "route_number": "767",
+          "route_type": 2,
+          "route_id": 15813,
+          "route_gtfs_id": "4-767",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8343124,
+      "stop_longitude": 145.11203,
+      "stop_sequence": 0,
+      "stop_id": 13749,
+      "stop_name": "Byron St/Elgar Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill South",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Altona - Mordialloc (SMARTBUS Service)",
+          "route_number": "903",
+          "route_type": 2,
+          "route_id": 15789,
+          "route_gtfs_id": "4-903",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Southland - Box Hill Station via Chadstone & Jordanville & Deakin University",
+          "route_number": "767",
+          "route_type": 2,
+          "route_id": 15813,
+          "route_gtfs_id": "4-767",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.841732,
+      "stop_longitude": 145.110458,
+      "stop_sequence": 0,
+      "stop_id": 11744,
+      "stop_name": "Cadorna St/Elgar Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Mitcham - Box Hill via Brentford Square & Forest Hill & Blackburn",
+          "route_number": "765",
+          "route_type": 2,
+          "route_id": 964,
+          "route_gtfs_id": "4-765",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.82923,
+      "stop_longitude": 145.12973,
+      "stop_sequence": 0,
+      "stop_id": 12590,
+      "stop_name": "Canterbury Rd/Barkly St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill South",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station to Nunawading",
+          "route_number": "735",
+          "route_type": 2,
+          "route_id": 15798,
+          "route_gtfs_id": "4-735",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8294945,
+      "stop_longitude": 145.12677,
+      "stop_sequence": 0,
+      "stop_id": 13021,
+      "stop_name": "Canterbury Rd/Haig St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill South",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Oakleigh - Box Hill via Clayton & Monash University & Mt Waverley",
+          "route_number": "733",
+          "route_type": 2,
+          "route_id": 13271,
+          "route_gtfs_id": "4-733",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8308334,
+      "stop_longitude": 145.1361,
+      "stop_sequence": 0,
+      "stop_id": 25528,
+      "stop_name": "Canterbury Rd/Middleborough Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill South",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Altona - Mordialloc (SMARTBUS Service)",
+          "route_number": "903",
+          "route_type": 2,
+          "route_id": 15789,
+          "route_gtfs_id": "4-903",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station - Upper Ferntree Gully via Vermont South & Knox City & Mountain Gate",
+          "route_number": "732",
+          "route_type": 2,
+          "route_id": 15799,
+          "route_gtfs_id": "4-732",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8290634,
+      "stop_longitude": 145.121841,
+      "stop_sequence": 0,
+      "stop_id": 24382,
+      "stop_name": "Canterbury Rd/Station St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station - Burwood via Surrey Hills",
+          "route_number": "766",
+          "route_type": 2,
+          "route_id": 15800,
+          "route_gtfs_id": "4-766",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Southland - Box Hill Station via Chadstone & Jordanville & Deakin University",
+          "route_number": "767",
+          "route_type": 2,
+          "route_id": 15813,
+          "route_gtfs_id": "4-767",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.81927,
+      "stop_longitude": 145.114609,
+      "stop_sequence": 0,
+      "stop_id": 13383,
+      "stop_name": "Carrington Rd/Elgar Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Mitcham - Box Hill via Brentford Square & Forest Hill & Blackburn",
+          "route_number": "765",
+          "route_type": 2,
+          "route_id": 964,
+          "route_gtfs_id": "4-765",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8264542,
+      "stop_longitude": 145.130249,
+      "stop_sequence": 0,
+      "stop_id": 12588,
+      "stop_name": "Cherryhinton St/Barkly St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill South",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Oakleigh - Box Hill via Clayton & Monash University & Mt Waverley",
+          "route_number": "733",
+          "route_type": 2,
+          "route_id": 13271,
+          "route_gtfs_id": "4-733",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.83542,
+      "stop_longitude": 145.13533,
+      "stop_sequence": 0,
+      "stop_id": 24550,
+      "stop_name": "Clarice Rd/Middleborough Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Altona - Mordialloc (SMARTBUS Service)",
+          "route_number": "903",
+          "route_type": 2,
+          "route_id": 15789,
+          "route_gtfs_id": "4-903",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station to Nunawading",
+          "route_number": "735",
+          "route_type": 2,
+          "route_id": 15798,
+          "route_gtfs_id": "4-735",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station - Upper Ferntree Gully via Vermont South & Knox City & Mountain Gate",
+          "route_number": "732",
+          "route_type": 2,
+          "route_id": 15799,
+          "route_gtfs_id": "4-732",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8273125,
+      "stop_longitude": 145.122177,
+      "stop_sequence": 0,
+      "stop_id": 24381,
+      "stop_name": "Collins St/Station St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Altona - Mordialloc (SMARTBUS Service)",
+          "route_number": "903",
+          "route_type": 2,
+          "route_id": 15789,
+          "route_gtfs_id": "4-903",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station to Nunawading",
+          "route_number": "735",
+          "route_type": 2,
+          "route_id": 15798,
+          "route_gtfs_id": "4-735",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station - Upper Ferntree Gully via Vermont South & Knox City & Mountain Gate",
+          "route_number": "732",
+          "route_type": 2,
+          "route_id": 15799,
+          "route_gtfs_id": "4-732",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.825325,
+      "stop_longitude": 145.122543,
+      "stop_sequence": 0,
+      "stop_id": 24380,
+      "stop_name": "Combarton St/Station St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill South",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station to Nunawading",
+          "route_number": "735",
+          "route_type": 2,
+          "route_id": 15798,
+          "route_gtfs_id": "4-735",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8454933,
+      "stop_longitude": 145.130951,
+      "stop_sequence": 0,
+      "stop_id": 13754,
+      "stop_name": "Cornfield Gr/Eley Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station - Doncaster SC via Middleborough Rd",
+          "route_number": "279",
+          "route_type": 2,
+          "route_id": 15808,
+          "route_gtfs_id": "4-279",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8172379,
+      "stop_longitude": 145.138977,
+      "stop_sequence": 0,
+      "stop_id": 21088,
+      "stop_name": "Davey St/Middleborough Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill South",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station to Nunawading",
+          "route_number": "735",
+          "route_type": 2,
+          "route_id": 15798,
+          "route_gtfs_id": "4-735",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.834465,
+      "stop_longitude": 145.12645,
+      "stop_sequence": 0,
+      "stop_id": 13018,
+      "stop_name": "Devon St/Haig St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill South",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Altona - Mordialloc (SMARTBUS Service)",
+          "route_number": "903",
+          "route_type": 2,
+          "route_id": 15789,
+          "route_gtfs_id": "4-903",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station - Upper Ferntree Gully via Vermont South & Knox City & Mountain Gate",
+          "route_number": "732",
+          "route_type": 2,
+          "route_id": 15799,
+          "route_gtfs_id": "4-732",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8340569,
+      "stop_longitude": 145.120941,
+      "stop_sequence": 0,
+      "stop_id": 24384,
+      "stop_name": "Devon St/Station St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill North",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill - Mitcham via Blackburn North",
+          "route_number": "270",
+          "route_type": 2,
+          "route_id": 8128,
+          "route_gtfs_id": "4-270",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8022575,
+      "stop_longitude": 145.134262,
+      "stop_sequence": 0,
+      "stop_id": 13985,
+      "stop_name": "Dorking Rd/Roselea St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill South",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Altona - Mordialloc (SMARTBUS Service)",
+          "route_number": "903",
+          "route_type": 2,
+          "route_id": 15789,
+          "route_gtfs_id": "4-903",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station - Upper Ferntree Gully via Vermont South & Knox City & Mountain Gate",
+          "route_number": "732",
+          "route_type": 2,
+          "route_id": 15799,
+          "route_gtfs_id": "4-732",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8352737,
+      "stop_longitude": 145.120728,
+      "stop_sequence": 0,
+      "stop_id": 24385,
+      "stop_name": "Duncan St/Station St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill North",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station - Doncaster SC via Middleborough Rd",
+          "route_number": "279",
+          "route_type": 2,
+          "route_id": 15808,
+          "route_gtfs_id": "4-279",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.79895,
+      "stop_longitude": 145.142136,
+      "stop_sequence": 0,
+      "stop_id": 18574,
+      "stop_name": "Eastern Fwy/Middleborough Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill North",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Altona - Mordialloc (SMARTBUS Service)",
+          "route_number": "903",
+          "route_type": 2,
+          "route_id": 15789,
+          "route_gtfs_id": "4-903",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.7986,
+      "stop_longitude": 145.127075,
+      "stop_sequence": 0,
+      "stop_id": 21813,
+      "stop_name": "Eastern Fwy/Station St ",
+      "stop_landmark": "Eastern Fwy"
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill North",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Templestowe - Box Hill Bus Station",
+          "route_number": "281",
+          "route_type": 2,
+          "route_id": 15785,
+          "route_gtfs_id": "4-281",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station - Greensborough Station via Doncaster SC",
+          "route_number": "293",
+          "route_type": 2,
+          "route_id": 16269,
+          "route_gtfs_id": "4-293",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.7988,
+      "stop_longitude": 145.1184,
+      "stop_sequence": 0,
+      "stop_id": 14226,
+      "stop_name": "Elgar Park/Elgar Rd ",
+      "stop_landmark": "Elgar Park"
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill North",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station - Chadstone via Surrey Hills & Camberwell & Glen Iris",
+          "route_number": "612",
+          "route_type": 2,
+          "route_id": 13024,
+          "route_gtfs_id": "4-612",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8116379,
+      "stop_longitude": 145.116318,
+      "stop_sequence": 0,
+      "stop_id": 17876,
+      "stop_name": "Elgar Rd/Severn St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 1,
+      "routes": [
+        {
+          "route_name": "Box Hill - Port Melbourne",
+          "route_number": "109",
+          "route_type": 1,
+          "route_id": 722,
+          "route_gtfs_id": "3-109",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8168831,
+      "stop_longitude": 145.114426,
+      "stop_sequence": 0,
+      "stop_id": 2411,
+      "stop_name": "Elgar Rd/Whitehorse Rd #56 ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "City - Box Hill -Doncaster SC",
+          "route_number": "302-304 Combined",
+          "route_type": 2,
+          "route_id": 13796,
+          "route_gtfs_id": "4-C24",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Templestowe - Box Hill Bus Station",
+          "route_number": "281",
+          "route_type": 2,
+          "route_id": 15785,
+          "route_gtfs_id": "4-281",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "City - Box Hill Station via Belmore Rd and Eastern Fwy",
+          "route_number": "302",
+          "route_type": 2,
+          "route_id": 15804,
+          "route_gtfs_id": "4-302",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station - Greensborough Station via Doncaster SC",
+          "route_number": "293",
+          "route_type": 2,
+          "route_id": 16269,
+          "route_gtfs_id": "4-293",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8143578,
+      "stop_longitude": 145.119568,
+      "stop_sequence": 0,
+      "stop_id": 34087,
+      "stop_name": "Epworth Eastern/Arnold St ",
+      "stop_landmark": "Epworth Eastern"
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill South",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station to Nunawading",
+          "route_number": "735",
+          "route_type": 2,
+          "route_id": 15798,
+          "route_gtfs_id": "4-735",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.83602,
+      "stop_longitude": 145.12616,
+      "stop_sequence": 0,
+      "stop_id": 13017,
+      "stop_name": "Foch St/Haig St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill South",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Altona - Mordialloc (SMARTBUS Service)",
+          "route_number": "903",
+          "route_type": 2,
+          "route_id": 15789,
+          "route_gtfs_id": "4-903",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station - Upper Ferntree Gully via Vermont South & Knox City & Mountain Gate",
+          "route_number": "732",
+          "route_type": 2,
+          "route_id": 15799,
+          "route_gtfs_id": "4-732",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8368073,
+      "stop_longitude": 145.120438,
+      "stop_sequence": 0,
+      "stop_id": 24386,
+      "stop_name": "Foch St/Station St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill South",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Altona - Mordialloc (SMARTBUS Service)",
+          "route_number": "903",
+          "route_type": 2,
+          "route_id": 15789,
+          "route_gtfs_id": "4-903",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8379135,
+      "stop_longitude": 145.1153,
+      "stop_sequence": 0,
+      "stop_id": 25493,
+      "stop_name": "Fowler St/Riversdale Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Mitcham - Box Hill via Brentford Square & Forest Hill & Blackburn",
+          "route_number": "765",
+          "route_type": 2,
+          "route_id": 964,
+          "route_gtfs_id": "4-765",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8233528,
+      "stop_longitude": 145.127533,
+      "stop_sequence": 0,
+      "stop_id": 12585,
+      "stop_name": "Glenmore Street Reserve/William St ",
+      "stop_landmark": "Glenmore Street Reserve"
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill South",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station to Nunawading",
+          "route_number": "735",
+          "route_type": 2,
+          "route_id": 15798,
+          "route_gtfs_id": "4-735",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.84445,
+      "stop_longitude": 145.121857,
+      "stop_sequence": 0,
+      "stop_id": 13751,
+      "stop_name": "Greenbank Ave/Eley Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Altona - Mordialloc (SMARTBUS Service)",
+          "route_number": "903",
+          "route_type": 2,
+          "route_id": 15789,
+          "route_gtfs_id": "4-903",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station to Nunawading",
+          "route_number": "735",
+          "route_type": 2,
+          "route_id": 15798,
+          "route_gtfs_id": "4-735",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station - Upper Ferntree Gully via Vermont South & Knox City & Mountain Gate",
+          "route_number": "732",
+          "route_type": 2,
+          "route_id": 15799,
+          "route_gtfs_id": "4-732",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.82163,
+      "stop_longitude": 145.123215,
+      "stop_sequence": 0,
+      "stop_id": 24377,
+      "stop_name": "Harrow St/Station St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Mitcham - Box Hill via Brentford Square & Forest Hill & Blackburn",
+          "route_number": "765",
+          "route_type": 2,
+          "route_id": 964,
+          "route_gtfs_id": "4-765",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8221855,
+      "stop_longitude": 145.127777,
+      "stop_sequence": 0,
+      "stop_id": 12584,
+      "stop_name": "Harrow St/William St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill South",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Oakleigh - Box Hill via Clayton & Monash University & Mt Waverley",
+          "route_number": "733",
+          "route_type": 2,
+          "route_id": 13271,
+          "route_gtfs_id": "4-733",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.83768,
+      "stop_longitude": 145.134888,
+      "stop_sequence": 0,
+      "stop_id": 24549,
+      "stop_name": "Inala Village/249 Middleborough Rd ",
+      "stop_landmark": "Inala Village"
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill North",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Altona - Mordialloc (SMARTBUS Service)",
+          "route_number": "903",
+          "route_type": 2,
+          "route_id": 15789,
+          "route_gtfs_id": "4-903",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8036346,
+      "stop_longitude": 145.1264,
+      "stop_sequence": 0,
+      "stop_id": 21811,
+      "stop_name": "Inglis St/Station St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Altona - Mordialloc (SMARTBUS Service)",
+          "route_number": "903",
+          "route_type": 2,
+          "route_id": 15789,
+          "route_gtfs_id": "4-903",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station to Nunawading",
+          "route_number": "735",
+          "route_type": 2,
+          "route_id": 15798,
+          "route_gtfs_id": "4-735",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station - Upper Ferntree Gully via Vermont South & Knox City & Mountain Gate",
+          "route_number": "732",
+          "route_type": 2,
+          "route_id": 15799,
+          "route_gtfs_id": "4-732",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8237076,
+      "stop_longitude": 145.122833,
+      "stop_sequence": 0,
+      "stop_id": 24378,
+      "stop_name": "James St/Station St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Mitcham - Box Hill via Brentford Square & Forest Hill & Blackburn",
+          "route_number": "765",
+          "route_type": 2,
+          "route_id": 964,
+          "route_gtfs_id": "4-765",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8276825,
+      "stop_longitude": 145.13002,
+      "stop_sequence": 0,
+      "stop_id": 12589,
+      "stop_name": "Jolie Gr/Barkly St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill South",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Oakleigh - Box Hill via Clayton & Monash University & Mt Waverley",
+          "route_number": "733",
+          "route_type": 2,
+          "route_id": 13271,
+          "route_gtfs_id": "4-733",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station to Nunawading",
+          "route_number": "735",
+          "route_type": 2,
+          "route_id": 15798,
+          "route_gtfs_id": "4-735",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.843792,
+      "stop_longitude": 145.133942,
+      "stop_sequence": 0,
+      "stop_id": 22669,
+      "stop_name": "Joyhill Ave/Middleborough Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill North",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station - Doncaster SC via Middleborough Rd",
+          "route_number": "279",
+          "route_type": 2,
+          "route_id": 15808,
+          "route_gtfs_id": "4-279",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "City - Ringwood North via Park Rd",
+          "route_number": "303",
+          "route_type": 2,
+          "route_id": 16451,
+          "route_gtfs_id": "4-303",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.803772,
+      "stop_longitude": 145.141449,
+      "stop_sequence": 0,
+      "stop_id": 21082,
+      "stop_name": "Katrina St/Middleborough Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill South",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Altona - Mordialloc (SMARTBUS Service)",
+          "route_number": "903",
+          "route_type": 2,
+          "route_id": 15789,
+          "route_gtfs_id": "4-903",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station - Upper Ferntree Gully via Vermont South & Knox City & Mountain Gate",
+          "route_number": "732",
+          "route_type": 2,
+          "route_id": 15799,
+          "route_gtfs_id": "4-732",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8316422,
+      "stop_longitude": 145.121353,
+      "stop_sequence": 0,
+      "stop_id": 24383,
+      "stop_name": "Kingswood College/Station St ",
+      "stop_landmark": "Kingswood College"
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Altona - Mordialloc (SMARTBUS Service)",
+          "route_number": "903",
+          "route_type": 2,
+          "route_id": 15789,
+          "route_gtfs_id": "4-903",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station to Nunawading",
+          "route_number": "735",
+          "route_type": 2,
+          "route_id": 15798,
+          "route_gtfs_id": "4-735",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station - Upper Ferntree Gully via Vermont South & Knox City & Mountain Gate",
+          "route_number": "732",
+          "route_type": 2,
+          "route_id": 15799,
+          "route_gtfs_id": "4-732",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.82814,
+      "stop_longitude": 145.121857,
+      "stop_sequence": 0,
+      "stop_id": 24791,
+      "stop_name": "Landale St/Station St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill North",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station - Doncaster SC via Middleborough Rd",
+          "route_number": "279",
+          "route_type": 2,
+          "route_id": 15808,
+          "route_gtfs_id": "4-279",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8128777,
+      "stop_longitude": 145.139816,
+      "stop_sequence": 0,
+      "stop_id": 21086,
+      "stop_name": "Lexton Rd/Middleborough Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill South",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Altona - Mordialloc (SMARTBUS Service)",
+          "route_number": "903",
+          "route_type": 2,
+          "route_id": 15789,
+          "route_gtfs_id": "4-903",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.83831,
+      "stop_longitude": 145.117813,
+      "stop_sequence": 0,
+      "stop_id": 25494,
+      "stop_name": "Lyndoch St/Riversdale Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station - Ringwood via Park Orchards",
+          "route_number": "271",
+          "route_type": 2,
+          "route_id": 15806,
+          "route_gtfs_id": "4-271",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station - Doncaster SC via Middleborough Rd",
+          "route_number": "279",
+          "route_type": 2,
+          "route_id": 15808,
+          "route_gtfs_id": "4-279",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.81912,
+      "stop_longitude": 145.140274,
+      "stop_sequence": 0,
+      "stop_id": 21907,
+      "stop_name": "Malabar Rd/Whitehorse Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill North",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station - Doncaster SC via Middleborough Rd",
+          "route_number": "279",
+          "route_type": 2,
+          "route_id": 15808,
+          "route_gtfs_id": "4-279",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.81513,
+      "stop_longitude": 145.13942,
+      "stop_sequence": 0,
+      "stop_id": 21087,
+      "stop_name": "Margaret St/Middleborough Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill North",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station - Doncaster SC via Middleborough Rd",
+          "route_number": "279",
+          "route_type": 2,
+          "route_id": 15808,
+          "route_gtfs_id": "4-279",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "City - Ringwood North via Park Rd",
+          "route_number": "303",
+          "route_type": 2,
+          "route_id": 16451,
+          "route_gtfs_id": "4-303",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.80533,
+      "stop_longitude": 145.14119,
+      "stop_sequence": 0,
+      "stop_id": 21083,
+      "stop_name": "Marshall Rd/Middleborough Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill North",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill - Mitcham via Blackburn North",
+          "route_number": "270",
+          "route_type": 2,
+          "route_id": 8128,
+          "route_gtfs_id": "4-270",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.813,
+      "stop_longitude": 145.131821,
+      "stop_sequence": 0,
+      "stop_id": 12545,
+      "stop_name": "McKean St/Dorking Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill North",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill - Mitcham via Blackburn North",
+          "route_number": "270",
+          "route_type": 2,
+          "route_id": 8128,
+          "route_gtfs_id": "4-270",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.81252,
+      "stop_longitude": 145.131775,
+      "stop_sequence": 0,
+      "stop_id": 19789,
+      "stop_name": "Medway St/Dorking Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill North",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Altona - Mordialloc (SMARTBUS Service)",
+          "route_number": "903",
+          "route_type": 2,
+          "route_id": 15789,
+          "route_gtfs_id": "4-903",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.80492,
+      "stop_longitude": 145.126312,
+      "stop_sequence": 0,
+      "stop_id": 21532,
+      "stop_name": "Memorial Park/Station St ",
+      "stop_landmark": "Memorial Park"
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Mitcham - Box Hill via Brentford Square & Forest Hill & Blackburn",
+          "route_number": "765",
+          "route_type": 2,
+          "route_id": 964,
+          "route_gtfs_id": "4-765",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.82784,
+      "stop_longitude": 145.129913,
+      "stop_sequence": 0,
+      "stop_id": 13055,
+      "stop_name": "Menzies St/Barkly St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Oakleigh - Box Hill via Clayton & Monash University & Mt Waverley",
+          "route_number": "733",
+          "route_type": 2,
+          "route_id": 13271,
+          "route_gtfs_id": "4-733",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.82578,
+      "stop_longitude": 145.136475,
+      "stop_sequence": 0,
+      "stop_id": 22564,
+      "stop_name": "Middleborough Rd/Albion Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Mitcham - Box Hill via Brentford Square & Forest Hill & Blackburn",
+          "route_number": "765",
+          "route_type": 2,
+          "route_id": 964,
+          "route_gtfs_id": "4-765",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8304558,
+      "stop_longitude": 145.137482,
+      "stop_sequence": 0,
+      "stop_id": 11416,
+      "stop_name": "Middleborough Rd/Canterbury Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill South",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Oakleigh - Box Hill via Clayton & Monash University & Mt Waverley",
+          "route_number": "733",
+          "route_type": 2,
+          "route_id": 13271,
+          "route_gtfs_id": "4-733",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.84103,
+      "stop_longitude": 145.1343,
+      "stop_sequence": 0,
+      "stop_id": 24547,
+      "stop_name": "Mirabella Cres/Middleborough Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill North",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Altona - Mordialloc (SMARTBUS Service)",
+          "route_number": "903",
+          "route_type": 2,
+          "route_id": 15789,
+          "route_gtfs_id": "4-903",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8002739,
+      "stop_longitude": 145.127213,
+      "stop_sequence": 0,
+      "stop_id": 21528,
+      "stop_name": "Narallah Gr/Station St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill North",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station - Chadstone via Surrey Hills & Camberwell & Glen Iris",
+          "route_number": "612",
+          "route_type": 2,
+          "route_id": 13024,
+          "route_gtfs_id": "4-612",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.81207,
+      "stop_longitude": 145.11998,
+      "stop_sequence": 0,
+      "stop_id": 17878,
+      "stop_name": "Nelson Rd/Severn St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station - Chadstone via Surrey Hills & Camberwell & Glen Iris",
+          "route_number": "612",
+          "route_type": 2,
+          "route_id": 13024,
+          "route_gtfs_id": "4-612",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8132324,
+      "stop_longitude": 145.120529,
+      "stop_sequence": 0,
+      "stop_id": 17879,
+      "stop_name": "Nelson Rd/Thames St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station - Burwood via Surrey Hills",
+          "route_number": "766",
+          "route_type": 2,
+          "route_id": 15800,
+          "route_gtfs_id": "4-766",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Southland - Box Hill Station via Chadstone & Jordanville & Deakin University",
+          "route_number": "767",
+          "route_type": 2,
+          "route_id": 15813,
+          "route_gtfs_id": "4-767",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Doncaster Park & Ride - Box Hill Station via Union Road",
+          "route_number": "284",
+          "route_type": 2,
+          "route_id": 16447,
+          "route_gtfs_id": "4-284",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8173256,
+      "stop_longitude": 145.117874,
+      "stop_sequence": 0,
+      "stop_id": 22677,
+      "stop_name": "Nelson Rd/Whitehorse Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 1,
+      "routes": [
+        {
+          "route_name": "Box Hill - Port Melbourne",
+          "route_number": "109",
+          "route_type": 1,
+          "route_id": 722,
+          "route_gtfs_id": "3-109",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8174171,
+      "stop_longitude": 145.118713,
+      "stop_sequence": 0,
+      "stop_id": 2410,
+      "stop_name": "Nelson Rd/Whitehorse Rd #57 ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill South",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Altona - Mordialloc (SMARTBUS Service)",
+          "route_number": "903",
+          "route_type": 2,
+          "route_id": 15789,
+          "route_gtfs_id": "4-903",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8381424,
+      "stop_longitude": 145.117355,
+      "stop_sequence": 0,
+      "stop_id": 28147,
+      "stop_name": "Newlands Ct/Riversdale Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station - Ringwood via Park Orchards",
+          "route_number": "271",
+          "route_type": 2,
+          "route_id": 15806,
+          "route_gtfs_id": "4-271",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station - Doncaster SC via Middleborough Rd",
+          "route_number": "279",
+          "route_type": 2,
+          "route_id": 15808,
+          "route_gtfs_id": "4-279",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.81877,
+      "stop_longitude": 145.129913,
+      "stop_sequence": 0,
+      "stop_id": 21904,
+      "stop_name": "Our Lady of Sion College/Whitehorse Rd ",
+      "stop_landmark": "Our Lady of Sion College"
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill North",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Altona - Mordialloc (SMARTBUS Service)",
+          "route_number": "903",
+          "route_type": 2,
+          "route_id": 15789,
+          "route_gtfs_id": "4-903",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8064,
+      "stop_longitude": 145.125992,
+      "stop_sequence": 0,
+      "stop_id": 21808,
+      "stop_name": "Paisley St/Station St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill South",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station to Nunawading",
+          "route_number": "735",
+          "route_type": 2,
+          "route_id": 15798,
+          "route_gtfs_id": "4-735",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.83162,
+      "stop_longitude": 145.126953,
+      "stop_sequence": 0,
+      "stop_id": 13020,
+      "stop_name": "Peace St/Haig St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill South",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Southland - Box Hill Station via Chadstone & Jordanville & Deakin University",
+          "route_number": "767",
+          "route_type": 2,
+          "route_id": 15813,
+          "route_gtfs_id": "4-767",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8296738,
+      "stop_longitude": 145.112732,
+      "stop_sequence": 0,
+      "stop_id": 13747,
+      "stop_name": "Piedmont St/Elgar Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill South",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station to Nunawading",
+          "route_number": "735",
+          "route_type": 2,
+          "route_id": 15798,
+          "route_gtfs_id": "4-735",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.83315,
+      "stop_longitude": 145.126663,
+      "stop_sequence": 0,
+      "stop_id": 13019,
+      "stop_name": "Prince St/Haig St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill South",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station to Nunawading",
+          "route_number": "735",
+          "route_type": 2,
+          "route_id": 15798,
+          "route_gtfs_id": "4-735",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station - Upper Ferntree Gully via Vermont South & Knox City & Mountain Gate",
+          "route_number": "732",
+          "route_type": 2,
+          "route_id": 15799,
+          "route_gtfs_id": "4-732",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8388939,
+      "stop_longitude": 145.1207,
+      "stop_sequence": 0,
+      "stop_id": 24387,
+      "stop_name": "Riversdale Rd/Station St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Oakleigh - Box Hill via Clayton & Monash University & Mt Waverley",
+          "route_number": "733",
+          "route_type": 2,
+          "route_id": 13271,
+          "route_gtfs_id": "4-733",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.82134,
+      "stop_longitude": 145.132065,
+      "stop_sequence": 0,
+      "stop_id": 22559,
+      "stop_name": "Rutland Rd/Barcelona St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Mitcham - Box Hill via Brentford Square & Forest Hill & Blackburn",
+          "route_number": "765",
+          "route_type": 2,
+          "route_id": 964,
+          "route_gtfs_id": "4-765",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Oakleigh - Box Hill via Clayton & Monash University & Mt Waverley",
+          "route_number": "733",
+          "route_type": 2,
+          "route_id": 13271,
+          "route_gtfs_id": "4-733",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8209076,
+      "stop_longitude": 145.128021,
+      "stop_sequence": 0,
+      "stop_id": 13061,
+      "stop_name": "Rutland Rd/William St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Oakleigh - Box Hill via Clayton & Monash University & Mt Waverley",
+          "route_number": "733",
+          "route_type": 2,
+          "route_id": 13271,
+          "route_gtfs_id": "4-733",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.822998,
+      "stop_longitude": 145.131622,
+      "stop_sequence": 0,
+      "stop_id": 25533,
+      "stop_name": "Sanders Rd/Barcelona St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill North",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill - Mitcham via Blackburn North",
+          "route_number": "270",
+          "route_type": 2,
+          "route_id": 8128,
+          "route_gtfs_id": "4-270",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8028336,
+      "stop_longitude": 145.138,
+      "stop_sequence": 0,
+      "stop_id": 13995,
+      "stop_name": "Second Ave/Heathfield Rise ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill North",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Altona - Mordialloc (SMARTBUS Service)",
+          "route_number": "903",
+          "route_type": 2,
+          "route_id": 15789,
+          "route_gtfs_id": "4-903",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.81292,
+      "stop_longitude": 145.124985,
+      "stop_sequence": 0,
+      "stop_id": 21536,
+      "stop_name": "Severn St/Station St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill North",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Altona - Mordialloc (SMARTBUS Service)",
+          "route_number": "903",
+          "route_type": 2,
+          "route_id": 15789,
+          "route_gtfs_id": "4-903",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8081245,
+      "stop_longitude": 145.125854,
+      "stop_sequence": 0,
+      "stop_id": 21534,
+      "stop_name": "Shannon St/Station St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station - Ringwood via Park Orchards",
+          "route_number": "271",
+          "route_type": 2,
+          "route_id": 15806,
+          "route_gtfs_id": "4-271",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station - Doncaster SC via Middleborough Rd",
+          "route_number": "279",
+          "route_type": 2,
+          "route_id": 15808,
+          "route_gtfs_id": "4-279",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8191452,
+      "stop_longitude": 145.1333,
+      "stop_sequence": 0,
+      "stop_id": 18741,
+      "stop_name": "Simpsons Rd/Whitehorse Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill North",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill - Mitcham via Blackburn North",
+          "route_number": "270",
+          "route_type": 2,
+          "route_id": 8128,
+          "route_gtfs_id": "4-270",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.80883,
+      "stop_longitude": 145.1326,
+      "stop_sequence": 0,
+      "stop_id": 12884,
+      "stop_name": "Springfield Rd/Dorking Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill North",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Altona - Mordialloc (SMARTBUS Service)",
+          "route_number": "903",
+          "route_type": 2,
+          "route_id": 15789,
+          "route_gtfs_id": "4-903",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.80122,
+      "stop_longitude": 145.126877,
+      "stop_sequence": 0,
+      "stop_id": 21812,
+      "stop_name": "St Philips Pl/Station St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill South",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station to Nunawading",
+          "route_number": "735",
+          "route_type": 2,
+          "route_id": 15798,
+          "route_gtfs_id": "4-735",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8445053,
+      "stop_longitude": 145.12149,
+      "stop_sequence": 0,
+      "stop_id": 25292,
+      "stop_name": "Station St/Eley Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill South",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station to Nunawading",
+          "route_number": "735",
+          "route_type": 2,
+          "route_id": 15798,
+          "route_gtfs_id": "4-735",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8367043,
+      "stop_longitude": 145.120819,
+      "stop_sequence": 0,
+      "stop_id": 13015,
+      "stop_name": "Station St/Foch St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Mitcham - Box Hill via Brentford Square & Forest Hill & Blackburn",
+          "route_number": "765",
+          "route_type": 2,
+          "route_id": 964,
+          "route_gtfs_id": "4-765",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Oakleigh - Box Hill via Clayton & Monash University & Mt Waverley",
+          "route_number": "733",
+          "route_type": 2,
+          "route_id": 13271,
+          "route_gtfs_id": "4-733",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.81974,
+      "stop_longitude": 145.123825,
+      "stop_sequence": 0,
+      "stop_id": 13062,
+      "stop_name": "Station St/Rutland Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station - Chadstone via Surrey Hills & Camberwell & Glen Iris",
+          "route_number": "612",
+          "route_type": 2,
+          "route_id": 13024,
+          "route_gtfs_id": "4-612",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.81364,
+      "stop_longitude": 145.123978,
+      "stop_sequence": 0,
+      "stop_id": 17880,
+      "stop_name": "Station St/Thames St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Southland - Box Hill Station via Chadstone & Jordanville & Deakin University",
+          "route_number": "767",
+          "route_type": 2,
+          "route_id": 15813,
+          "route_gtfs_id": "4-767",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8264847,
+      "stop_longitude": 145.113235,
+      "stop_sequence": 0,
+      "stop_id": 13425,
+      "stop_name": "Surrey Park/Elgar Rd ",
+      "stop_landmark": "Surrey Park"
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Oakleigh - Box Hill via Clayton & Monash University & Mt Waverley",
+          "route_number": "733",
+          "route_type": 2,
+          "route_id": 13271,
+          "route_gtfs_id": "4-733",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.82387,
+      "stop_longitude": 145.1319,
+      "stop_sequence": 0,
+      "stop_id": 22561,
+      "stop_name": "Sweetland Rd/Barcelona St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill South",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station to Nunawading",
+          "route_number": "735",
+          "route_type": 2,
+          "route_id": 15798,
+          "route_gtfs_id": "4-735",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8449059,
+      "stop_longitude": 145.12587,
+      "stop_sequence": 0,
+      "stop_id": 13752,
+      "stop_name": "Swinborne St/Eley Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill South",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station to Nunawading",
+          "route_number": "735",
+          "route_type": 2,
+          "route_id": 15798,
+          "route_gtfs_id": "4-735",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.83703,
+      "stop_longitude": 145.1234,
+      "stop_sequence": 0,
+      "stop_id": 13016,
+      "stop_name": "Sycamore St/Foch St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill North",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Altona - Mordialloc (SMARTBUS Service)",
+          "route_number": "903",
+          "route_type": 2,
+          "route_id": 15789,
+          "route_gtfs_id": "4-903",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.81444,
+      "stop_longitude": 145.124557,
+      "stop_sequence": 0,
+      "stop_id": 21804,
+      "stop_name": "Thames St/Station St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill South",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Altona - Mordialloc (SMARTBUS Service)",
+          "route_number": "903",
+          "route_type": 2,
+          "route_id": 15789,
+          "route_gtfs_id": "4-903",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8383865,
+      "stop_longitude": 145.119461,
+      "stop_sequence": 0,
+      "stop_id": 25495,
+      "stop_name": "Thomas St/Riversdale Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill North",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station - Doncaster SC via Middleborough Rd",
+          "route_number": "279",
+          "route_type": 2,
+          "route_id": 15808,
+          "route_gtfs_id": "4-279",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "City - Ringwood North via Park Rd",
+          "route_number": "303",
+          "route_type": 2,
+          "route_id": 16451,
+          "route_gtfs_id": "4-303",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.80177,
+      "stop_longitude": 145.14183,
+      "stop_sequence": 0,
+      "stop_id": 21081,
+      "stop_name": "Toogoods Rise/Middleborough Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill North",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill - Mitcham via Blackburn North",
+          "route_number": "270",
+          "route_type": 2,
+          "route_id": 8128,
+          "route_gtfs_id": "4-270",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8059235,
+      "stop_longitude": 145.133163,
+      "stop_sequence": 0,
+      "stop_id": 12895,
+      "stop_name": "Trawool St/Dorking Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill North",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station - Doncaster SC via Middleborough Rd",
+          "route_number": "279",
+          "route_type": 2,
+          "route_id": 15808,
+          "route_gtfs_id": "4-279",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "City - Ringwood North via Park Rd",
+          "route_number": "303",
+          "route_type": 2,
+          "route_id": 16451,
+          "route_gtfs_id": "4-303",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8059959,
+      "stop_longitude": 145.14122,
+      "stop_sequence": 0,
+      "stop_id": 21210,
+      "stop_name": "Twyford St/Middleborough Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill North",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill - Mitcham via Blackburn North",
+          "route_number": "270",
+          "route_type": 2,
+          "route_id": 8128,
+          "route_gtfs_id": "4-270",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8109436,
+      "stop_longitude": 145.132217,
+      "stop_sequence": 0,
+      "stop_id": 12552,
+      "stop_name": "Tyne St/Dorking Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill North",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Altona - Mordialloc (SMARTBUS Service)",
+          "route_number": "903",
+          "route_type": 2,
+          "route_id": 15789,
+          "route_gtfs_id": "4-903",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8109474,
+      "stop_longitude": 145.125351,
+      "stop_sequence": 0,
+      "stop_id": 21535,
+      "stop_name": "Tyne St/Station St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill South",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Southland - Box Hill Station via Chadstone & Jordanville & Deakin University",
+          "route_number": "767",
+          "route_type": 2,
+          "route_id": 15813,
+          "route_gtfs_id": "4-767",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.83131,
+      "stop_longitude": 145.112488,
+      "stop_sequence": 0,
+      "stop_id": 13748,
+      "stop_name": "Venice St/Elgar Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Oakleigh - Box Hill via Clayton & Monash University & Mt Waverley",
+          "route_number": "733",
+          "route_type": 2,
+          "route_id": 13271,
+          "route_gtfs_id": "4-733",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.82549,
+      "stop_longitude": 145.1339,
+      "stop_sequence": 0,
+      "stop_id": 22563,
+      "stop_name": "Via Media Park/Albion Rd ",
+      "stop_landmark": "Via Media Park"
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Mitcham - Box Hill via Brentford Square & Forest Hill & Blackburn",
+          "route_number": "765",
+          "route_type": 2,
+          "route_id": 964,
+          "route_gtfs_id": "4-765",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.82502,
+      "stop_longitude": 145.12973,
+      "stop_sequence": 0,
+      "stop_id": 12587,
+      "stop_name": "Victoria St/Albion Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Oakleigh - Box Hill via Clayton & Monash University & Mt Waverley",
+          "route_number": "733",
+          "route_type": 2,
+          "route_id": 13271,
+          "route_gtfs_id": "4-733",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.820694,
+      "stop_longitude": 145.130539,
+      "stop_sequence": 0,
+      "stop_id": 22558,
+      "stop_name": "Victoria St/Rutland Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Southland - Box Hill Station via Chadstone & Jordanville & Deakin University",
+          "route_number": "767",
+          "route_type": 2,
+          "route_id": 15813,
+          "route_gtfs_id": "4-767",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.83775,
+      "stop_longitude": 145.111191,
+      "stop_sequence": 0,
+      "stop_id": 22836,
+      "stop_name": "Wattle Park/Elgar Rd ",
+      "stop_landmark": "Wattle Park"
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Mt Buller-Mansfield - Melbourne via Yea",
+          "route_number": "",
+          "route_type": 3,
+          "route_id": 1725,
+          "route_gtfs_id": "5-V28",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Mt Buller-Mansfield - Melbourne via Yea",
+          "route_number": "",
+          "route_type": 3,
+          "route_id": 1725,
+          "route_gtfs_id": "4-V28",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill - Mitcham via Blackburn North",
+          "route_number": "270",
+          "route_type": 2,
+          "route_id": 8128,
+          "route_gtfs_id": "4-270",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station - Ringwood via Park Orchards",
+          "route_number": "271",
+          "route_type": 2,
+          "route_id": 15806,
+          "route_gtfs_id": "4-271",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station - Doncaster SC via Middleborough Rd",
+          "route_number": "279",
+          "route_type": 2,
+          "route_id": 15808,
+          "route_gtfs_id": "4-279",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8186,
+      "stop_longitude": 145.125961,
+      "stop_sequence": 0,
+      "stop_id": 4407,
+      "stop_name": "Watts St/Whitehorse Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 3,
+      "routes": [
+        {
+          "route_name": "Mt Buller-Mansfield - Melbourne via Yea",
+          "route_number": "",
+          "route_type": 3,
+          "route_id": 1725,
+          "route_gtfs_id": "5-V28",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Mt Buller-Mansfield - Melbourne via Yea",
+          "route_number": "",
+          "route_type": 3,
+          "route_id": 1725,
+          "route_gtfs_id": "4-V28",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill - Mitcham via Blackburn North",
+          "route_number": "270",
+          "route_type": 2,
+          "route_id": 8128,
+          "route_gtfs_id": "4-270",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station - Ringwood via Park Orchards",
+          "route_number": "271",
+          "route_type": 2,
+          "route_id": 15806,
+          "route_gtfs_id": "4-271",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station - Doncaster SC via Middleborough Rd",
+          "route_number": "279",
+          "route_type": 2,
+          "route_id": 15808,
+          "route_gtfs_id": "4-279",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8186,
+      "stop_longitude": 145.125961,
+      "stop_sequence": 0,
+      "stop_id": 4407,
+      "stop_name": "Watts St/Whitehorse Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "City - Box Hill -Doncaster SC",
+          "route_number": "302-304 Combined",
+          "route_type": 2,
+          "route_id": 13796,
+          "route_gtfs_id": "4-C24",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Templestowe - Box Hill Bus Station",
+          "route_number": "281",
+          "route_type": 2,
+          "route_id": 15785,
+          "route_gtfs_id": "4-281",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "City - Box Hill Station via Belmore Rd and Eastern Fwy",
+          "route_number": "302",
+          "route_type": 2,
+          "route_id": 15804,
+          "route_gtfs_id": "4-302",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Box Hill Station - Greensborough Station via Doncaster SC",
+          "route_number": "293",
+          "route_type": 2,
+          "route_id": 16269,
+          "route_gtfs_id": "4-293",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.81427,
+      "stop_longitude": 145.118042,
+      "stop_sequence": 0,
+      "stop_id": 21544,
+      "stop_name": "Wellington Rd/Arnold St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station - Burwood via Surrey Hills",
+          "route_number": "766",
+          "route_type": 2,
+          "route_id": 15800,
+          "route_gtfs_id": "4-766",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Southland - Box Hill Station via Chadstone & Jordanville & Deakin University",
+          "route_number": "767",
+          "route_type": 2,
+          "route_id": 15813,
+          "route_gtfs_id": "4-767",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Doncaster Park & Ride - Box Hill Station via Union Road",
+          "route_number": "284",
+          "route_type": 2,
+          "route_id": 16447,
+          "route_gtfs_id": "4-284",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8170471,
+      "stop_longitude": 145.116882,
+      "stop_sequence": 0,
+      "stop_id": 22283,
+      "stop_name": "Wellington Rd/Whitehorse Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Mitcham - Box Hill via Brentford Square & Forest Hill & Blackburn",
+          "route_number": "765",
+          "route_type": 2,
+          "route_id": 964,
+          "route_gtfs_id": "4-765",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.83003,
+      "stop_longitude": 145.133484,
+      "stop_sequence": 0,
+      "stop_id": 12591,
+      "stop_name": "Wembley Park/Canterbury Rd ",
+      "stop_landmark": "Wembley Park"
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill South",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Mitcham - Box Hill via Brentford Square & Forest Hill & Blackburn",
+          "route_number": "765",
+          "route_type": 2,
+          "route_id": 964,
+          "route_gtfs_id": "4-765",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.83013,
+      "stop_longitude": 145.133453,
+      "stop_sequence": 0,
+      "stop_id": 13053,
+      "stop_name": "Wembley Park/Canterbury Rd ",
+      "stop_landmark": "Wembley Park"
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill - Mitcham via Blackburn North",
+          "route_number": "270",
+          "route_type": 2,
+          "route_id": 8128,
+          "route_gtfs_id": "4-270",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.818325,
+      "stop_longitude": 145.13063,
+      "stop_sequence": 0,
+      "stop_id": 19787,
+      "stop_name": "Whitehorse Rd/Dorking Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill Station - Chadstone via Surrey Hills & Camberwell & Glen Iris",
+          "route_number": "612",
+          "route_type": 2,
+          "route_id": 13024,
+          "route_gtfs_id": "4-612",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        },
+        {
+          "route_name": "Altona - Mordialloc (SMARTBUS Service)",
+          "route_number": "903",
+          "route_type": 2,
+          "route_id": 15789,
+          "route_gtfs_id": "4-903",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.817482,
+      "stop_longitude": 145.123978,
+      "stop_sequence": 0,
+      "stop_id": 17881,
+      "stop_name": "Whitehorse Rd/Station St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Oakleigh - Box Hill via Clayton & Monash University & Mt Waverley",
+          "route_number": "733",
+          "route_type": 2,
+          "route_id": 13271,
+          "route_gtfs_id": "4-733",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.82045,
+      "stop_longitude": 145.128433,
+      "stop_sequence": 0,
+      "stop_id": 25536,
+      "stop_name": "William St/Rutland Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill - Mitcham via Blackburn North",
+          "route_number": "270",
+          "route_type": 2,
+          "route_id": 8128,
+          "route_gtfs_id": "4-270",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8087921,
+      "stop_longitude": 145.132462,
+      "stop_sequence": 0,
+      "stop_id": 19791,
+      "stop_name": "Wimmera St/Dorking Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill North",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Altona - Mordialloc (SMARTBUS Service)",
+          "route_number": "903",
+          "route_type": 2,
+          "route_id": 15789,
+          "route_gtfs_id": "4-903",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.806385,
+      "stop_longitude": 145.126144,
+      "stop_sequence": 0,
+      "stop_id": 21533,
+      "stop_name": "Wimmera St/Station St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill North",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Box Hill - Mitcham via Blackburn North",
+          "route_number": "270",
+          "route_type": 2,
+          "route_id": 8128,
+          "route_gtfs_id": "4-270",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.803,
+      "stop_longitude": 145.133728,
+      "stop_sequence": 0,
+      "stop_id": 13974,
+      "stop_name": "Woodhouse Gr/Dorking Rd ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill North",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Altona - Mordialloc (SMARTBUS Service)",
+          "route_number": "903",
+          "route_type": 2,
+          "route_id": 15789,
+          "route_gtfs_id": "4-903",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8023453,
+      "stop_longitude": 145.126816,
+      "stop_sequence": 0,
+      "stop_id": 21529,
+      "stop_name": "Woodhouse Gr/Station St ",
+      "stop_landmark": ""
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Box Hill",
+      "route_type": 2,
+      "routes": [
+        {
+          "route_name": "Oakleigh - Box Hill via Clayton & Monash University & Mt Waverley",
+          "route_number": "733",
+          "route_type": 2,
+          "route_id": 13271,
+          "route_gtfs_id": "4-733",
+          "route_service_status": {
+            "description": "Good Service",
+            "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+          }
+        }
+      ],
+      "stop_latitude": -37.8253937,
+      "stop_longitude": 145.132263,
+      "stop_sequence": 0,
+      "stop_id": 20259,
+      "stop_name": "Yarra Theological Union/Albion Rd ",
+      "stop_landmark": "Yarra Theological Union"
+    }
+  ],
+  "routes": [
+    {
+      "route_name": "Belgrave Line",
+      "route_number": "",
+      "route_type": 0,
+      "route_id": 2,
+      "route_gtfs_id": "2-BEG",
+      "route_service_status": {
+        "description": "Good Service",
+        "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+      }
+    },
+    {
+      "route_name": "Lilydale Line",
+      "route_number": "",
+      "route_type": 0,
+      "route_id": 9,
+      "route_gtfs_id": "2-LIL",
+      "route_service_status": {
+        "description": "Good Service",
+        "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+      }
+    },
+    {
+      "route_name": "Mt Buller-Mansfield - Melbourne via Yea",
+      "route_number": "",
+      "route_type": 3,
+      "route_id": 1725,
+      "route_gtfs_id": "4-V28",
+      "route_service_status": {
+        "description": "Good Service",
+        "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+      }
+    },
+    {
+      "route_name": "Box Hill - Port Melbourne",
+      "route_number": "109",
+      "route_type": 1,
+      "route_id": 722,
+      "route_gtfs_id": "3-109",
+      "route_service_status": {
+        "description": "Good Service",
+        "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+      }
+    },
+    {
+      "route_name": "Box Hill Station - Deakin University",
+      "route_number": "201",
+      "route_type": 2,
+      "route_id": 15802,
+      "route_gtfs_id": "4-201",
+      "route_service_status": {
+        "description": "Good Service",
+        "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+      }
+    },
+    {
+      "route_name": "Box Hill - Mitcham via Blackburn North",
+      "route_number": "270",
+      "route_type": 2,
+      "route_id": 8128,
+      "route_gtfs_id": "4-270",
+      "route_service_status": {
+        "description": "Good Service",
+        "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+      }
+    },
+    {
+      "route_name": "Box Hill Station - Ringwood via Park Orchards",
+      "route_number": "271",
+      "route_type": 2,
+      "route_id": 15806,
+      "route_gtfs_id": "4-271",
+      "route_service_status": {
+        "description": "Good Service",
+        "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+      }
+    },
+    {
+      "route_name": "Box Hill Station - Doncaster SC via Middleborough Rd",
+      "route_number": "279",
+      "route_type": 2,
+      "route_id": 15808,
+      "route_gtfs_id": "4-279",
+      "route_service_status": {
+        "description": "Good Service",
+        "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+      }
+    },
+    {
+      "route_name": "Templestowe - Box Hill Bus Station",
+      "route_number": "281",
+      "route_type": 2,
+      "route_id": 15785,
+      "route_gtfs_id": "4-281",
+      "route_service_status": {
+        "description": "Good Service",
+        "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+      }
+    },
+    {
+      "route_name": "Doncaster Park & Ride - Box Hill Station via Union Road",
+      "route_number": "284",
+      "route_type": 2,
+      "route_id": 16447,
+      "route_gtfs_id": "4-284",
+      "route_service_status": {
+        "description": "Good Service",
+        "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+      }
+    },
+    {
+      "route_name": "Box Hill Station - Greensborough Station via Doncaster SC",
+      "route_number": "293",
+      "route_type": 2,
+      "route_id": 16269,
+      "route_gtfs_id": "4-293",
+      "route_service_status": {
+        "description": "Good Service",
+        "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+      }
+    },
+    {
+      "route_name": "City - Box Hill Station via Belmore Rd and Eastern Fwy",
+      "route_number": "302",
+      "route_type": 2,
+      "route_id": 15804,
+      "route_gtfs_id": "4-302",
+      "route_service_status": {
+        "description": "Good Service",
+        "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+      }
+    },
+    {
+      "route_name": "City - Box Hill -Doncaster SC",
+      "route_number": "302-304 Combined",
+      "route_type": 2,
+      "route_id": 13796,
+      "route_gtfs_id": "4-C24",
+      "route_service_status": {
+        "description": "Good Service",
+        "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+      }
+    },
+    {
+      "route_name": "City - Ringwood North via Park Rd",
+      "route_number": "303",
+      "route_type": 2,
+      "route_id": 16451,
+      "route_gtfs_id": "4-303",
+      "route_service_status": {
+        "description": "Good Service",
+        "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+      }
+    },
+    {
+      "route_name": "Box Hill Station - Chadstone via Surrey Hills & Camberwell & Glen Iris",
+      "route_number": "612",
+      "route_type": 2,
+      "route_id": 13024,
+      "route_gtfs_id": "4-612",
+      "route_service_status": {
+        "description": "Good Service",
+        "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+      }
+    },
+    {
+      "route_name": "Box Hill Station - Upper Ferntree Gully via Vermont South & Knox City & Mountain Gate",
+      "route_number": "732",
+      "route_type": 2,
+      "route_id": 15799,
+      "route_gtfs_id": "4-732",
+      "route_service_status": {
+        "description": "Good Service",
+        "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+      }
+    },
+    {
+      "route_name": "Oakleigh - Box Hill via Clayton & Monash University & Mt Waverley",
+      "route_number": "733",
+      "route_type": 2,
+      "route_id": 13271,
+      "route_gtfs_id": "4-733",
+      "route_service_status": {
+        "description": "Good Service",
+        "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+      }
+    },
+    {
+      "route_name": "Box Hill Station to Nunawading",
+      "route_number": "735",
+      "route_type": 2,
+      "route_id": 15798,
+      "route_gtfs_id": "4-735",
+      "route_service_status": {
+        "description": "Good Service",
+        "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+      }
+    },
+    {
+      "route_name": "Mitcham - Box Hill via Brentford Square & Forest Hill & Blackburn",
+      "route_number": "765",
+      "route_type": 2,
+      "route_id": 964,
+      "route_gtfs_id": "4-765",
+      "route_service_status": {
+        "description": "Good Service",
+        "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+      }
+    },
+    {
+      "route_name": "Box Hill Station - Burwood via Surrey Hills",
+      "route_number": "766",
+      "route_type": 2,
+      "route_id": 15800,
+      "route_gtfs_id": "4-766",
+      "route_service_status": {
+        "description": "Good Service",
+        "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+      }
+    },
+    {
+      "route_name": "Southland - Box Hill Station via Chadstone & Jordanville & Deakin University",
+      "route_number": "767",
+      "route_type": 2,
+      "route_id": 15813,
+      "route_gtfs_id": "4-767",
+      "route_service_status": {
+        "description": "Good Service",
+        "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+      }
+    },
+    {
+      "route_name": "Altona - Mordialloc (SMARTBUS Service)",
+      "route_number": "903",
+      "route_type": 2,
+      "route_id": 15789,
+      "route_gtfs_id": "4-903",
+      "route_service_status": {
+        "description": "Good Service",
+        "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+      }
+    },
+    {
+      "route_name": "Route SkyBus Eastern Express",
+      "route_number": "",
+      "route_type": 2,
+      "route_id": 18925,
+      "route_gtfs_id": "11-box",
+      "route_service_status": {
+        "description": "Good Service",
+        "timestamp": "2026-04-01T03:39:28.8184038+00:00"
+      }
+    }
+  ],
+  "outlets": [
+    {
+      "outlet_distance": 0,
+      "outlet_slid_spid": "1987",
+      "outlet_name": "786 Whitehorse Road (Corner Elgar Road)",
+      "outlet_business": "7-Eleven Box Hill",
+      "outlet_latitude": -37.8171,
+      "outlet_longitude": 145.1143,
+      "outlet_suburb": "Box Hill",
+      "outlet_postcode": 3128,
+      "outlet_business_hour_mon": null,
+      "outlet_business_hour_tue": null,
+      "outlet_business_hour_wed": null,
+      "outlet_business_hour_thur": null,
+      "outlet_business_hour_fri": null,
+      "outlet_business_hour_sat": null,
+      "outlet_business_hour_sun": null,
+      "outlet_notes": null
+    },
+    {
+      "outlet_distance": 0,
+      "outlet_slid_spid": "2940",
+      "outlet_name": "870 Canterbury Rd",
+      "outlet_business": "Box Hill South Post & Newsagency",
+      "outlet_latitude": -37.8289,
+      "outlet_longitude": 145.1213,
+      "outlet_suburb": "Box Hill South",
+      "outlet_postcode": 3128,
+      "outlet_business_hour_mon": null,
+      "outlet_business_hour_tue": null,
+      "outlet_business_hour_wed": null,
+      "outlet_business_hour_thur": null,
+      "outlet_business_hour_fri": null,
+      "outlet_business_hour_sat": null,
+      "outlet_business_hour_sun": null,
+      "outlet_notes": null
+    },
+    {
+      "outlet_distance": 0,
+      "outlet_slid_spid": "20042",
+      "outlet_name": "Station Street",
+      "outlet_business": "Box Hill Station",
+      "outlet_latitude": -37.8192,
+      "outlet_longitude": 145.1214,
+      "outlet_suburb": "Box Hill",
+      "outlet_postcode": 3128,
+      "outlet_business_hour_mon": null,
+      "outlet_business_hour_tue": null,
+      "outlet_business_hour_wed": null,
+      "outlet_business_hour_thur": null,
+      "outlet_business_hour_fri": null,
+      "outlet_business_hour_sat": null,
+      "outlet_business_hour_sun": null,
+      "outlet_notes": null
+    },
+    {
+      "outlet_distance": 0,
+      "outlet_slid_spid": "19781",
+      "outlet_name": "Whitehorse Road",
+      "outlet_business": "Box Hill Terminus Whitehorse Rd",
+      "outlet_latitude": -37.8179,
+      "outlet_longitude": 145.1223,
+      "outlet_suburb": "Box Hill",
+      "outlet_postcode": 3128,
+      "outlet_business_hour_mon": null,
+      "outlet_business_hour_tue": null,
+      "outlet_business_hour_wed": null,
+      "outlet_business_hour_thur": null,
+      "outlet_business_hour_fri": null,
+      "outlet_business_hour_sat": null,
+      "outlet_business_hour_sun": null,
+      "outlet_notes": null
+    },
+    {
+      "outlet_distance": 0,
+      "outlet_slid_spid": "2966",
+      "outlet_name": "515 Middleborough Rd",
+      "outlet_business": "Kerrimuir Newsagency",
+      "outlet_latitude": -37.809,
+      "outlet_longitude": 145.1401,
+      "outlet_suburb": "Box Hill North",
+      "outlet_postcode": 3129,
+      "outlet_business_hour_mon": null,
+      "outlet_business_hour_tue": null,
+      "outlet_business_hour_wed": null,
+      "outlet_business_hour_thur": null,
+      "outlet_business_hour_fri": null,
+      "outlet_business_hour_sat": null,
+      "outlet_business_hour_sun": null,
+      "outlet_notes": null
+    },
+    {
+      "outlet_distance": 0,
+      "outlet_slid_spid": "1234",
+      "outlet_name": "953 Station Street",
+      "outlet_business": "Woodhouse Grove Healthcare Pharmacy",
+      "outlet_latitude": -37.8013,
+      "outlet_longitude": 145.1268,
+      "outlet_suburb": "Box Hill North",
+      "outlet_postcode": 3129,
+      "outlet_business_hour_mon": null,
+      "outlet_business_hour_tue": null,
+      "outlet_business_hour_wed": null,
+      "outlet_business_hour_thur": null,
+      "outlet_business_hour_fri": null,
+      "outlet_business_hour_sat": null,
+      "outlet_business_hour_sun": null,
+      "outlet_notes": null
+    }
+  ],
+  "status": {
+    "version": "3.0",
+    "health": 1
+  }
+}
