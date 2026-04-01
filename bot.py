@@ -84,8 +84,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
         "Welcome to PTV Tracker!\n\n"
         "Commands:\n"
-        "/search <stop name> - Find a stop\n"
-        "/cancel - Cancel current search"
+        "/search <stop name> - Find a stop"
     )
 
 async def search_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -237,11 +236,6 @@ def format_stop_message(stop, index=None):
     msg += "---"
     return msg
 
-async def cancel_search(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Cancel the search conversation"""
-    await update.message.reply_text("❌ Search cancelled. Type /search to try again.")
-    return ConversationHandler.END
-
 async def error_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Log errors"""
     logger.error(f"Update {update} caused error {context.error}")
@@ -262,7 +256,7 @@ def main():
                 MessageHandler(filters.TEXT & ~filters.COMMAND, handle_route_type),
             ],
         },
-        fallbacks=[CommandHandler("cancel", cancel_search)],
+        fallbacks=[],
     )
     application.add_handler(search_conv_handler)
     
