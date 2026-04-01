@@ -11,6 +11,7 @@ import requests
 import hmac
 import hashlib
 import time
+import urllib.parse
 from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes
 
@@ -30,7 +31,9 @@ PTV_API_KEY = os.environ.get('PTV_API_KEY')
 def get_ptv_data(endpoint):
     """Fetch data from PTV API with HMAC signature"""
     timestamp = str(int(time.time()))
-    path = f'/v3/{endpoint}'
+    # URL-encode the endpoint to handle spaces and special characters
+    encoded_endpoint = urllib.parse.quote(endpoint, safe='/')
+    path = f'/v3/{encoded_endpoint}'
     raw = f'{path}?devid={PTV_DEV_ID}&timestamp={timestamp}'
     
     signature = hmac.new(
