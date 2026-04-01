@@ -34,6 +34,7 @@ PTV_API_KEY = os.environ.get('PTV_API_KEY')
 
 # Conversation states
 ASKING_ROUTE_TYPE = 1
+ASKING_STOP_SELECTION = 2
 
 # Route types table
 ROUTE_TYPES = [
@@ -155,6 +156,7 @@ async def handle_route_type(update: Update, context: ContextTypes.DEFAULT_TYPE):
     else:
         header_msg = f"🔍 *All stops* for '{search_term}':\n"
     
+    # Show stop summary table and ask for selection
     if not stops:
         await update.message.reply_text(
             f"❌ No {ROUTE_TYPES[route_type_filter]['route_type_name'].lower() if route_type_filter is not None else ''} stops found for '{search_term}'.\n"
@@ -162,17 +164,27 @@ async def handle_route_type(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
         return ConversationHandler.END
     
-    await update.message.reply_text(header_msg, parse_mode='Markdown')
+    # Store stops in user data for selection
+    context.user_data['found_stops'] = stops
     
-    # Display stops (limited to 5)
-    for i, stop in enumerate(stops[:5], 1):
-        msg = format_stop_message(stop, i)
-        await update.message.reply_text(msg, parse_mode='Markdown')
+    # Display summary table
+    msg = f"{header_msg}\n"
+    msg += "Enter one or more numbers to view details (e.g., '1' or '1,2,3'):\n\n"
     
-    if len(stops) > 5:
-        await update.message.reply_text(f"_...and {len(stops) - 5} more stop(s)_", parse_mode='Markdown')
+    for i, stop in enumerate(stops[:10], 1):
+        stop_name = stop.get('stop_name', 'N/A')
+        stop_suburb = stop.get('stop_suburb', 'N/A')
+        route_type = stop.get('route_type', 0)
+        rt_info = ROUTE_TYPES[route_type] if route_type < len(ROUTE_TYPES) else {"emoji": "❓"}
+        emoji = rt_info['emoji']
+        msg += f"{i}. {emoji} {stop_name} ({stop_suburb})\n"
     
-    return ConversationHandler.END
+    if len(stops) > 10:
+        msg += f"\n...and {len(stops) - 10} more stop(s)"
+    
+    await update.message.reply_text(msg, parse_mode='Markdown')
+    
+    return ASKING_STOP_SELECTION
 
 def format_stop_message(stop, index=None):
     """Format stop results showing comprehensive route and stop information"""
@@ -243,6 +255,58 @@ def format_stop_message(stop, index=None):
     msg += "---"
     return msg
 
+async def handle_stop_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handle user's stop selection from the table"""
+    user_input = update.message.text.strip()
+    stops = context.user_data.get('found_stops', [])
+    
+    if not stops:
+        await update.message.reply_text("❌ Session expired. Please start a new search with /search")
+        return ConversationHandler.END
+    
+    # Parse numbers from input (comma, space, or mixed separated)
+    import re
+    numbers = re.findall(r'\d+', user_input)
+    
+    if not numbers:
+        await update.message.reply_text(
+            "❌ Invalid input. Please enter one or more numbers.\n"
+            "Examples: '1', '2,3', '1 3 5'"
+        )
+        return ASKING_STOP_SELECTION
+    
+    # Convert to integers and validate
+    selected_indices = []
+    for num_str in numbers:
+        idx = int(num_str) - 1  # Convert to 0-based index
+        if 0 <= idx < len(stops):
+            selected_indices.append(idx)
+        else:
+            await update.message.reply_text(
+                f"⚠️ Number {num_str} is out of range. Please enter numbers between 1 and {len(stops)}."
+            )
+            return ASKING_STOP_SELECTION
+    
+    # Remove duplicates while preserving order
+    seen = set()
+    unique_indices = []
+    for idx in selected_indices:
+        if idx not in seen:
+            seen.add(idx)
+            unique_indices.append(idx)
+    
+    # Show details for selected stops
+    await update.message.reply_text(
+        f"📍 Showing details for {len(unique_indices)} stop(s):\n"
+    )
+    
+    for i, idx in enumerate(unique_indices, 1):
+        stop = stops[idx]
+        msg = format_stop_message(stop, idx + 1)
+        await update.message.reply_text(msg, parse_mode='Markdown')
+    
+    return ConversationHandler.END
+
 async def error_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Log errors"""
     logger.error(f"Update {update} caused error {context.error}")
@@ -261,6 +325,9 @@ def main():
         states={
             ASKING_ROUTE_TYPE: [
                 MessageHandler(filters.TEXT & ~filters.COMMAND, handle_route_type),
+            ],
+            ASKING_STOP_SELECTION: [
+                MessageHandler(filters.TEXT & ~filters.COMMAND, handle_stop_selection),
             ],
         },
         fallbacks=[],
