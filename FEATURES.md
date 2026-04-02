@@ -26,6 +26,40 @@ Type `more` to load additional results in batches of 10:
 - Progress indicator shows "X-Y of Z"
 - When all results shown: "That's all results!"
 
+---
+
+## Route Guide Command
+
+### `/guide <from> to <to>`
+Find public transport routes between two locations.
+
+**Examples:**
+- `/guide Box Hill to Blackburn`
+- `/guide Flinders Street to Richmond`
+- `/guide` (interactive mode)
+
+**Flow:**
+1. Enter origin and destination (or use interactive prompts)
+2. Select transport type preference
+3. Bot searches for stops at both locations
+4. Finds routes that serve both origin and destination areas
+5. Displays route options with boarding and alighting stops
+
+**Output Format:**
+```
+🗺️ All routes from Box Hill to Blackburn:
+
+1. 🚂 *Belgrave - Melbourne* (Train)
+   🚏 Board at: Box Hill Station, Box Hill Central
+   🎯 Alight at: Blackburn Station
+
+2. 🚂 *Lilydale - Melbourne* (Train)
+   🚏 Board at: Box Hill Station
+   🎯 Alight at: Blackburn Station
+```
+
+**Note:** This feature finds routes that serve both locations. It shows direct routes where the same line serves both origin and destination. For complex multi-transfer journeys, the PTV app may provide better results.
+
 ## Transport Types
 
 | Code | Type | Emoji |
@@ -68,6 +102,10 @@ When you select stops, the bot shows:
 
 ## Future Roadmap
 
+### Implemented Commands
+- [x] `/search <stop name>` - Search for stops
+- [x] `/guide <from> to <to>` - Route planning between two locations
+
 ### Planned Commands
 - [ ] `/help` - Show all available commands and usage examples
 - [ ] `/track <stop_id>` - Add a stop to track for departures
@@ -78,6 +116,12 @@ When you select stops, the bot shows:
 - [ ] `/alerts` - Configure disruption notifications
 - [ ] `/settings` - Manage user preferences
 
+### Implemented Features
+- [x] Multi-select stop viewing
+- [x] Paginated results (type 'more')
+- [x] Route planning between two stops
+- [x] Paginated route display (type 'more' for more routes)
+
 ### Planned Features
 - [ ] Real-time departure tracking with auto-refresh
 - [ ] Push notifications for service disruptions
@@ -85,7 +129,6 @@ When you select stops, the bot shows:
 - [ ] Recent search history
 - [ ] Inline keyboard buttons for common actions
 - [ ] Estimated arrival times with live updates
-- [ ] Route planning between two stops
 - [ ] Group chat support for shared tracking
 
 ### Technical Improvements

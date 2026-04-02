@@ -36,6 +36,9 @@ PTV_API_KEY = os.environ.get('PTV_API_KEY')
 ASKING_ROUTE_TYPE = 1
 ASKING_STOP_SELECTION = 2
 VIEWING_STOP_DETAILS = 3
+GUIDE_ASKING_ORIGIN = 4
+GUIDE_ASKING_DESTINATION = 5
+GUIDE_CONFIRM_ROUTE_TYPE = 6
 
 # Route types table
 ROUTE_TYPES = [
@@ -86,7 +89,8 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
         "Welcome to PTV Tracker!\n\n"
         "Commands:\n"
-        "/search <stop name> - Find a stop"
+        "/search <stop name> - Find a stop\n"
+        "/guide <from> to <to> - Get route guidance"
     )
 
 async def search_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -474,6 +478,207 @@ async def error_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Log errors"""
     logger.error(f"Update {update} caused error {context.error}")
 
+# Guide Command Handlers
+async def guide_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Start route guidance - parse origin and destination from args or ask interactively"""
+    # Check if user provided origin/destination in command
+    if context.args:
+        full_input = ' '.join(context.args).lower()
+        # Parse format: "origin to destination"
+        if ' to ' in full_input:
+            parts = full_input.split(' to ', 1)
+            origin = parts[0].strip()
+            destination = parts[1].strip()
+            
+            context.user_data['guide_origin'] = origin
+            context.user_data['guide_destination'] = destination
+            
+            await update.message.reply_text(
+                f"🗺️ Finding route from *{origin}* to *{destination}*...\n\n"
+                f"{get_route_type_table()}",
+                parse_mode='Markdown'
+            )
+            return GUIDE_CONFIRM_ROUTE_TYPE
+    
+    # Interactive mode - ask for origin
+    await update.message.reply_text(
+        "🗺️ Route Planner\n\n"
+        "Where are you starting from?\n"
+        "(e.g., 'Box Hill', 'Flinders Street', 'Glen Waverley')"
+    )
+    return GUIDE_ASKING_ORIGIN
+
+async def guide_handle_origin(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handle origin input"""
+    origin = update.message.text.strip()
+    context.user_data['guide_origin'] = origin
+    
+    await update.message.reply_text(
+        f"📍 Starting from: *{origin}*\n\n"
+        f"Where do you want to go?",
+        parse_mode='Markdown'
+    )
+    return GUIDE_ASKING_DESTINATION
+
+async def guide_handle_destination(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handle destination input"""
+    destination = update.message.text.strip()
+    context.user_data['guide_destination'] = destination
+    
+    await update.message.reply_text(
+        f"🗺️ Route: *{context.user_data['guide_origin']}* → *{destination}*\n\n"
+        f"{get_route_type_table()}",
+        parse_mode='Markdown'
+    )
+    return GUIDE_CONFIRM_ROUTE_TYPE
+
+async def guide_handle_route_type(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handle transport type selection and find connecting routes"""
+    user_input = update.message.text.strip().lower()
+    origin = context.user_data.get('guide_origin', '')
+    destination = context.user_data.get('guide_destination', '')
+    
+    # Validate input
+    if user_input == 'all':
+        route_type_filter = None
+    elif user_input.isdigit() and int(user_input) in range(5):
+        route_type_filter = int(user_input)
+    else:
+        await update.message.reply_text(
+            "❌ Invalid input. Please enter a number from 0-4, or type 'all'.\n\n"
+            + get_route_type_table(),
+            parse_mode='Markdown'
+        )
+        return GUIDE_CONFIRM_ROUTE_TYPE
+    
+    await update.message.reply_text(
+        f"🔍 Finding routes from *{origin}* to *{destination}*...",
+        parse_mode='Markdown'
+    )
+    
+    # Search for origin and destination stops
+    origin_data = get_ptv_data(f'search/{urllib.parse.quote(origin)}')
+    dest_data = get_ptv_data(f'search/{urllib.parse.quote(destination)}')
+    
+    if not origin_data or 'stops' not in origin_data or not origin_data['stops']:
+        await update.message.reply_text(
+            f"❌ No stops found for origin '{origin}'.\n"
+            "Try a different name or check spelling."
+        )
+        return ConversationHandler.END
+    
+    if not dest_data or 'stops' not in dest_data or not dest_data['stops']:
+        await update.message.reply_text(
+            f"❌ No stops found for destination '{destination}'.\n"
+            "Try a different name or check spelling."
+        )
+        return ConversationHandler.END
+    
+    # Filter by route type if specified
+    origin_stops = origin_data['stops']
+    dest_stops = dest_data['stops']
+    
+    if route_type_filter is not None:
+        origin_stops = [s for s in origin_stops if s.get('route_type') == route_type_filter]
+        dest_stops = [s for s in dest_stops if s.get('route_type') == route_type_filter]
+    
+    if not origin_stops:
+        await update.message.reply_text(f"❌ No {ROUTE_TYPES[route_type_filter]['route_type_name'].lower()} stops found for '{origin}'.")
+        return ConversationHandler.END
+    
+    if not dest_stops:
+        await update.message.reply_text(f"❌ No {ROUTE_TYPES[route_type_filter]['route_type_name'].lower()} stops found for '{destination}'.")
+        return ConversationHandler.END
+    
+    # Find connecting routes
+    route_suggestions = find_connecting_routes(origin_stops, dest_stops, route_type_filter)
+    
+    if not route_suggestions:
+        await update.message.reply_text(
+            "❌ No direct routes found between these locations.\n\n"
+            "Try:\n"
+            "- Use 'all' transport types\n"
+            "- Check different stop names\n"
+            "- Consider nearby major stations"
+        )
+        return ConversationHandler.END
+    
+    # Display route suggestions
+    type_name = ROUTE_TYPES[route_type_filter]['route_type_name'] if route_type_filter else 'All'
+    type_emoji = ROUTE_TYPES[route_type_filter]['emoji'] if route_type_filter else '🗺️'
+    
+    msg = f"{type_emoji} *{type_name} routes from {origin} to {destination}:*\n\n"
+    
+    for i, suggestion in enumerate(route_suggestions[:5], 1):
+        msg += format_route_suggestion(suggestion, i)
+        msg += "\n"
+    
+    if len(route_suggestions) > 5:
+        msg += f"_...and {len(route_suggestions) - 5} more options_\n"
+    
+    await update.message.reply_text(msg, parse_mode='Markdown')
+    return ConversationHandler.END
+
+def find_connecting_routes(origin_stops, dest_stops, route_type_filter=None):
+    """Find routes that connect origin to destination"""
+    suggestions = []
+    
+    # Build sets of route IDs for origin and destination stops
+    origin_routes = {}  # route_id -> list of stops
+    dest_routes = {}    # route_id -> list of stops
+    
+    for stop in origin_stops:
+        for route in stop.get('routes', []):
+            route_id = route.get('route_id')
+            if route_id:
+                if route_id not in origin_routes:
+                    origin_routes[route_id] = {'route': route, 'stops': []}
+                origin_routes[route_id]['stops'].append(stop)
+    
+    for stop in dest_stops:
+        for route in stop.get('routes', []):
+            route_id = route.get('route_id')
+            if route_id:
+                if route_id not in dest_routes:
+                    dest_routes[route_id] = {'route': route, 'stops': []}
+                dest_routes[route_id]['stops'].append(stop)
+    
+    # Find common routes
+    common_route_ids = set(origin_routes.keys()) & set(dest_routes.keys())
+    
+    for route_id in common_route_ids:
+        route_info = origin_routes[route_id]['route']
+        origin_stop_names = [s.get('stop_name') for s in origin_routes[route_id]['stops']]
+        dest_stop_names = [s.get('stop_name') for s in dest_routes[route_id]['stops']]
+        
+        suggestions.append({
+            'route': route_info,
+            'origin_stops': origin_stop_names[:2],  # Limit to 2
+            'dest_stops': dest_stop_names[:2],
+            'route_type': route_info.get('route_type', 0)
+        })
+    
+    return suggestions
+
+def format_route_suggestion(suggestion, index):
+    """Format a route suggestion for display"""
+    route = suggestion['route']
+    route_name = route.get('route_name', 'N/A')
+    route_number = route.get('route_number', '')
+    route_type = suggestion['route_type']
+    
+    rt_info = ROUTE_TYPES[route_type] if route_type < len(ROUTE_TYPES) else {"emoji": "❓", "route_type_name": "Unknown"}
+    emoji = rt_info['emoji']
+    type_name = rt_info['route_type_name']
+    
+    display_name = f"{route_number} - {route_name}" if route_number else route_name
+    
+    msg = f"{index}. {emoji} *{display_name}* ({type_name})\n"
+    msg += f"   🚏 Board at: {', '.join(suggestion['origin_stops'])}\n"
+    msg += f"   🎯 Alight at: {', '.join(suggestion['dest_stops'])}\n"
+    
+    return msg
+
 # Main function
 def main():
     # Build application
@@ -499,6 +704,24 @@ def main():
         fallbacks=[],
     )
     application.add_handler(search_conv_handler)
+    
+    # Guide conversation handler
+    guide_conv_handler = ConversationHandler(
+        entry_points=[CommandHandler("guide", guide_start)],
+        states={
+            GUIDE_ASKING_ORIGIN: [
+                MessageHandler(filters.TEXT & ~filters.COMMAND, guide_handle_origin),
+            ],
+            GUIDE_ASKING_DESTINATION: [
+                MessageHandler(filters.TEXT & ~filters.COMMAND, guide_handle_destination),
+            ],
+            GUIDE_CONFIRM_ROUTE_TYPE: [
+                MessageHandler(filters.TEXT & ~filters.COMMAND, guide_handle_route_type),
+            ],
+        },
+        fallbacks=[],
+    )
+    application.add_handler(guide_conv_handler)
     
     # Error handler
     application.add_error_handler(error_handler)
