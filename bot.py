@@ -35,6 +35,7 @@ PTV_API_KEY = os.environ.get('PTV_API_KEY')
 # Conversation states
 ASKING_ROUTE_TYPE = 1
 ASKING_STOP_SELECTION = 2
+VIEWING_STOP_DETAILS = 3
 
 # Route types table
 ROUTE_TYPES = [
@@ -188,7 +189,7 @@ async def handle_route_type(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
     return ASKING_STOP_SELECTION
 
-def format_stop_message(stop, index=None):
+def format_stop_message(stop, index=None, routes_shown=3, routes_start=0):
     """Format stop results showing comprehensive route and stop information"""
     stop_name = stop.get('stop_name') or 'N/A'
     stop_id = stop.get('stop_id') or 'N/A'
@@ -217,7 +218,8 @@ def format_stop_message(stop, index=None):
     
     # Add route information in comprehensive format
     if routes:
-        for i, route in enumerate(routes[:3], 1):  # Limit to 3 routes per stop
+        end_idx = min(routes_start + routes_shown, len(routes))
+        for i, route in enumerate(routes[routes_start:end_idx], routes_start + 1):
             route_name = route.get('route_name') or 'N/A'
             route_number = route.get('route_number') or 'N/A'
             route_id = route.get('route_id') or 'N/A'
@@ -249,8 +251,9 @@ def format_stop_message(stop, index=None):
             msg += f"      Status: {status}\n"
             msg += f"      Timestamp: {formatted_time}\n\n"
         
-        if len(routes) > 3:
-            msg += f"   ...and {len(routes) - 3} more route(s)\n\n"
+        remaining_routes = len(routes) - end_idx
+        if remaining_routes > 0:
+            msg += f"   ...and {remaining_routes} more route(s)\n\n"
     else:
         msg += "   No routes available for this stop\n\n"
     
@@ -330,17 +333,142 @@ async def handle_stop_selection(update: Update, context: ContextTypes.DEFAULT_TY
             seen.add(idx)
             unique_indices.append(idx)
     
-    # Show details for selected stops
+    # Show details for selected stops with initial route batch and prompt for more
     await update.message.reply_text(
         f"📍 Showing details for {len(unique_indices)} stop(s):\n"
     )
     
     for i, idx in enumerate(unique_indices, 1):
         stop = stops[idx]
-        msg = format_stop_message(stop, idx + 1)
+        msg = format_stop_message(stop, idx + 1, routes_shown=3)
         await update.message.reply_text(msg, parse_mode='Markdown')
+        
+        # Store stop data for potential 'more' requests
+        total_routes = len(stop.get('routes', []))
+        if total_routes > 3:
+            context.user_data['current_stop'] = stop
+            context.user_data['current_stop_index'] = idx + 1
+            context.user_data['routes_shown'] = 3
+            await update.message.reply_text(
+                "Type 'more' to see additional routes for this stop, or enter another stop number."
+            )
+            return VIEWING_STOP_DETAILS
     
     return ConversationHandler.END
+
+async def handle_route_pagination(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handle 'more' request for additional routes or new stop selection"""
+    user_input = update.message.text.strip().lower()
+    stops = context.user_data.get('found_stops', [])
+    current_stop = context.user_data.get('current_stop')
+    
+    if not current_stop:
+        await update.message.reply_text("❌ Session expired. Please start a new search with /search")
+        return ConversationHandler.END
+    
+    # Handle 'more' request for routes
+    if user_input == 'more':
+        routes = current_stop.get('routes', [])
+        routes_shown = context.user_data.get('routes_shown', 3)
+        stop_index = context.user_data.get('current_stop_index', 1)
+        
+        remaining = len(routes) - routes_shown
+        if remaining <= 0:
+            await update.message.reply_text("ℹ️ No more routes available for this stop.")
+            return VIEWING_STOP_DETAILS
+        
+        # Show next 3 routes
+        start_idx = routes_shown
+        end_idx = min(start_idx + 3, len(routes))
+        
+        msg = f"📍 {current_stop.get('stop_name')} - More Routes ({start_idx + 1}-{end_idx} of {len(routes)}):\n\n"
+        
+        for i, route in enumerate(routes[start_idx:end_idx], start_idx + 1):
+            route_name = route.get('route_name') or 'N/A'
+            route_number = route.get('route_number') or 'N/A'
+            route_id = route.get('route_id') or 'N/A'
+            route_gtfs_id = route.get('route_gtfs_id') or 'N/A'
+            route_type_route = route.get('route_type')
+            route_type_name = ROUTE_TYPES[route_type_route]['route_type_name'] if route_type_route and route_type_route < len(ROUTE_TYPES) else 'N/A'
+            status_info = route.get('route_service_status') or {}
+            status = status_info.get('description') or 'N/A'
+            timestamp_str = status_info.get('timestamp') or ''
+            
+            # Parse and format timestamp
+            formatted_time = 'N/A'
+            if timestamp_str:
+                try:
+                    ts_clean = timestamp_str.replace('Z', '+00:00')
+                    dt = datetime.fromisoformat(ts_clean)
+                    melbourne_tz = ZoneInfo('Australia/Melbourne')
+                    dt_local = dt.astimezone(melbourne_tz)
+                    formatted_time = dt_local.strftime("%H:%M:%S %d/%m/%Y")
+                except:
+                    formatted_time = 'N/A'
+            
+            msg += f"   Route {i}:\n"
+            msg += f"      Route Name: {route_name}\n"
+            msg += f"      Route Number: {route_number}\n"
+            msg += f"      Route ID: {route_id}\n"
+            msg += f"      GTFS ID: {route_gtfs_id}\n"
+            msg += f"      Transport Type: {route_type_name}\n"
+            msg += f"      Status: {status}\n"
+            msg += f"      Timestamp: {formatted_time}\n\n"
+        
+        # Update shown count
+        context.user_data['routes_shown'] = end_idx
+        
+        remaining_after = len(routes) - end_idx
+        if remaining_after > 0:
+            msg += f"...and {remaining_after} more route(s). Type 'more' to continue."
+        else:
+            msg += "That's all routes for this stop!"
+        
+        msg += "\n\nEnter another stop number or type 'done' to finish."
+        
+        await update.message.reply_text(msg, parse_mode='Markdown')
+        return VIEWING_STOP_DETAILS
+    
+    # Handle 'done' to end conversation
+    if user_input == 'done':
+        await update.message.reply_text("Search complete! Use /search to find more stops.")
+        return ConversationHandler.END
+    
+    # Handle new stop selection
+    import re
+    numbers = re.findall(r'\d+', user_input)
+    
+    if numbers:
+        # User selected a different stop, process it
+        selected_idx = int(numbers[0]) - 1
+        if 0 <= selected_idx < len(stops):
+            stop = stops[selected_idx]
+            msg = format_stop_message(stop, selected_idx + 1, routes_shown=3)
+            await update.message.reply_text(msg, parse_mode='Markdown')
+            
+            total_routes = len(stop.get('routes', []))
+            if total_routes > 3:
+                context.user_data['current_stop'] = stop
+                context.user_data['current_stop_index'] = selected_idx + 1
+                context.user_data['routes_shown'] = 3
+                await update.message.reply_text(
+                    "Type 'more' to see additional routes, 'done' to finish, or another stop number."
+                )
+                return VIEWING_STOP_DETAILS
+            else:
+                await update.message.reply_text("Enter another stop number or type 'done' to finish.")
+                return VIEWING_STOP_DETAILS
+        else:
+            await update.message.reply_text(
+                f"⚠️ Invalid stop number. Please enter 1-{len(stops)}, 'more', or 'done'."
+            )
+            return VIEWING_STOP_DETAILS
+    
+    # Invalid input
+    await update.message.reply_text(
+        "❌ Invalid input. Type 'more' for more routes, a stop number, or 'done' to finish."
+    )
+    return VIEWING_STOP_DETAILS
 
 async def error_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Log errors"""
@@ -363,6 +491,9 @@ def main():
             ],
             ASKING_STOP_SELECTION: [
                 MessageHandler(filters.TEXT & ~filters.COMMAND, handle_stop_selection),
+            ],
+            VIEWING_STOP_DETAILS: [
+                MessageHandler(filters.TEXT & ~filters.COMMAND, handle_route_pagination),
             ],
         },
         fallbacks=[],
